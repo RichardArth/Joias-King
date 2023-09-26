@@ -1,7 +1,18 @@
+import { useSearchParams } from 'react-router-dom';
 import CabecalhoAdm from '../components/cabecalhoadm';
 import './index.scss';
+import { useState } from 'react';
 
 function CadastroProduto() {
+
+  const[nomeproduto, setNomeProduto] = useState('');
+  const[preco, setPreco] = useState('');
+  const[materiais, setMateriais] = useState('');
+  const[estoque, setEstoque] = useState(0);
+  const[imagem, setImagem] = useState('');
+  const[categoria, setCategoria] = useState('');
+  const[codigo, setCodigo] = useState('');
+
   return (
     <div className="pagina-cadastro-produto">
       <div className='cabecalho'>
@@ -15,8 +26,8 @@ function CadastroProduto() {
       <main>
         <div className='valores'>
           <div>
-            <h5>NOME DO PRODUTO</h5>
-            <input></input>
+            <h5>NOME DO PRODUTO</h5>-
+            <input type='text' value={nomeproduto} onChange={e => setNomeProduto(e.target.value)}></input>
           </div>
 
           <div>
@@ -33,22 +44,22 @@ function CadastroProduto() {
 
           <div>
             <h5>PRECO (R$)</h5>
-            <input></input>
+            <input type='number' value={preco} onChange={e => setPreco(Number(e.target.value))}></input>
           </div>
 
           <div>
             <h5>MATERIAIS</h5>
-            <input></input>
+            <input type='text' value={materiais} onChange={e => setMateriais(e.target.value)}></input>
           </div>
 
           <div>
             <h5>ESTOQUE (QTD)</h5>
-            <input></input>
+            <input type='number' value={estoque} onChange={e => setEstoque(Number(e.target.value))}></input>
           </div>
 
           <div>
             <h5>CÓDIGO DO PRODUTO</h5>
-            <input></input>
+            <input type='text' value={codigo} onChange={e => setCodigo(e.target.value)}></input>
           </div>
         </div>
 

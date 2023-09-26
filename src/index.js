@@ -11,6 +11,7 @@ import Alterarsenha from './pages/alterar senha/index';
 import Loginadm from './pages/loginadm/index'; 
 import Sobrenos from './pages/sobrenos/index';
 import Categorias from './pages/categorias/index';
+import CadastroProduto from './pages/cadastro-produto';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -20,9 +21,10 @@ root.render(
         <Route path='/' element={<App />}  />
        <Route path='/cadastro' element={<Cadastro/>} />
        <Route path='/senha' element={<Alterarsenha/>} />
-       <Route path='adm' element={<Loginadm/>} />
-       <Route path='sobrenos' element={<Sobrenos/>} />
-       <Route path='categorias' element={<Categorias/>} />
+       <Route path='/adm' element={<Loginadm/>} />
+       <Route path='/sobrenos' element={<Sobrenos/>} />
+       <Route path='/categorias' element={<Categorias/>} />
+       <Route path='/cd-produto' element={<CadastroProduto />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
