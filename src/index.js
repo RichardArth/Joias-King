@@ -17,7 +17,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<App />}  />
+        <Route path='/login' element={<App />}  />
        <Route path='/cadastro' element={<Cadastro/>} />
        <Route path='/senha' element={<Alterarsenha/>} />
        <Route path='adm' element={<Loginadm/>} />
