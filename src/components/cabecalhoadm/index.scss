@@ -1,0 +1,77 @@
+.cabecalho {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.cima {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.cima div {
+    width: 13%;
+    max-width: 30%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.meio img {
+    max-width: 115%;
+    height: auto;
+    margin-top: 10px;
+    background-size: cover;
+    margin-bottom: 20px;
+}
+
+.direita img {
+    max-width: 50%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .cima div {
+        max-width: 100%;
+    }
+
+    .meio img {
+        max-width: 180%;
+    }
+
+    .direita img {
+        max-width: 60%;
+    }
+}
+
+@media (max-width: 580px) {
+    .meio img {
+        max-width: 240%;
+    }
+}
+
+.linha {
+    width: 100%;
+    border: 1px solid #B88B1B;
+    margin-top: 10px;
+    animation: CresceDiminui 13s linear infinite;
+}
+
+@keyframes CresceDiminui {
+    0%, 100% {
+        width: 100%;
+    }
+
+    50% {
+        width: 20%;
+    }
+}
