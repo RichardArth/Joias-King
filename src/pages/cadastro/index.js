@@ -5,13 +5,13 @@ return(
     <div className='index'>
         <section className='cadastro01'>
         <div className='cabecalho-cadastro'>
-          <img src='./assets/images/image 26.png'/>
+          <img src='./assets/images/logopreta.png'/>
         </div>
         
         <div className='cadastro-0'>
           <div className='cadastro-s1'>
           <h2>FAÇA SEU CADASTRO</h2>
-          <img src='./assets/images/image 27.png'/>
+          <img src='./assets/images/usuario.png'/>
           </div>
           <div className='cadastro-s2'>
             <h4>EMAIL</h4>

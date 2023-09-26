@@ -5,12 +5,12 @@ function Index() {
         <div className='Index'>
             <section className='alterarsenha'>
         <div className='cabecalho-alterar'>
-          <img src='./assets/images/image 26.png'/>
+          <img src='./assets/images/logopreta.png'/>
         </div>
         <div className='alterar'>
           <div className='alterar-s1'>
           <h2>ALTERAR SENHA</h2>
-          <img src='./assets/images/image 27.png'/>
+          <img src='./assets/images/usuario.png'/>
           </div>
           <div className='alterar-s2'>
             <h4>SENHA NOVA</h4>

@@ -1,5 +1,4 @@
-import { useSearchParams } from 'react-router-dom';
-import CabecalhoAdm from '../components/cabecalhoadm';
+import CabecalhoAdm from '../../components/cabecalhoadm/index.js';
 import './index.scss';
 import { useState } from 'react';
 
@@ -44,7 +43,7 @@ function CadastroProduto() {
 
           <div>
             <h5>PRECO (R$)</h5>
-            <input type='number' value={preco} onChange={e => setPreco(Number(e.target.value))}></input>
+            <input type='text' value={preco} onChange={e => setPreco(e.target.value)}></input>
           </div>
 
           <div>

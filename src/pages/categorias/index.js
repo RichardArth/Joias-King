@@ -28,7 +28,7 @@ function Index() {
             <div className='categorias-03'>
                 <h2>LANÇAMENTO IMPERDÍVEL</h2>
 
-                <img src='./assets/images/image 31.png'/>
+                <img src='./assets/images/aliançaad.png'/>
 
                 <p>LANÇAMENTO PARA OS MAIS ROMANTICOS,
                    PROMOÇÕES IMPERDÍVEIS!</p>
@@ -36,7 +36,7 @@ function Index() {
 
             <div className='categorias-04'>
                 <div className='categorias-cima'>
-                    <img src='./assets/images/image 32.png'/>
+                    <img src='./assets/images/anelprata.png'/>
 
                     <div className='categorias-cima-01'> 
                     <h4>Alianças Louveira + Anel solitário Olimpo
@@ -46,7 +46,7 @@ function Index() {
                     </div>
                 </div>
                 <div className='categorias-baixo'>
-                <img src='./assets/images/image 33.png'/>
+                <img src='./assets/images/colarcontrole.png'/>
 
                 <div className='categorias-baixo-01'>
                     
