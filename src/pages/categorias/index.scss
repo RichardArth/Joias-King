@@ -1,0 +1,158 @@
+.categorias{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.categorias-01{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.categorias-01 hr{
+
+    background-color: #B88B1B;
+    height: 3px;
+    width: 30vw;
+
+}
+
+.categorias-01 h1{
+    color: #000;
+    text-align: center;
+    font-family: Arya;
+    font-size: 35px;
+    width: 40vw;
+}
+
+
+.categorias-02{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 30px;
+}
+
+.categorias-02 a{
+    color: #383232;
+    font-family: Allerta;
+    font-size: 25px;
+    margin: 70px;
+}
+
+.categorias-03{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.categorias-03 h2{
+    color: #000;
+    font-family: Allerta;
+    font-size: 35px;
+}
+
+.categorias-03 img{
+    width: auto;
+    height: 70vh;
+}
+
+.categorias-03 p{
+    color: #000;
+text-align: center;
+font-family: Antic;
+font-size: 20px;
+width: 30vw;
+}
+
+.categorias-04{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.categorias-cima{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 80px;
+    
+} 
+
+.categorias-cima img{
+    width: auto;
+    height: 50vh;
+    
+}
+
+.categorias-cima-01{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.categorias-cima-01 h4{
+    color: #000;
+    text-align: center;
+    font-family: Allerta;
+    font-size: 25px;
+    width: 35vw;
+}
+
+.categorias-cima-01 p{
+    color: #DE0F0F;
+text-align: center;
+font-family: Allerta;
+font-size: 20px;
+margin: 20px;
+}
+
+
+.categorias-baixo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 80px;
+    
+} 
+
+.categorias-baixo img{
+    width: auto;
+    height: 50vh;
+    
+}
+
+.categorias-baixo-01{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.categorias-baixo-01 h4{
+    color: #000;
+    text-align: center;
+    font-family: Allerta;
+    font-size: 25px;
+    width: 35vw;
+}
+
+.categorias-baixo-01 p{
+    color: #DE0F0F;
+text-align: center;
+font-family: Allerta;
+font-size: 20px;
+margin: 10px;
+}
+
+
+
