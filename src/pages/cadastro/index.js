@@ -30,10 +30,10 @@ return(
             <input type="text" placeholder="Digite seu sobrenome"/>
 
             <h4>DATA DE NASCIMENTO</h4>
-            <input type="text" placeholder="Digite sua data de nascimento"/>
+            <input type="date" placeholder="Digite sua data de nascimento"/>
 
             <h4>CPF</h4>
-            <input type="text" placeholder="Digite seu CPF"/>
+            <input type="number" placeholder="Digite seu CPF"/>
 
            
 
