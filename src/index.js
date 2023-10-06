@@ -12,6 +12,7 @@ import Loginadm from './pages/loginadm/index';
 import Sobrenos from './pages/sobrenos/index';
 import Categorias from './pages/categorias/index';
 import CadastroProduto from './pages/cadastro-produto';
+import CuidadoJoias from './pages/cuidado com as joias';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -25,6 +26,7 @@ root.render(
        <Route path='/sobrenos' element={<Sobrenos/>} />
        <Route path='/categorias' element={<Categorias/>} />
        <Route path='/cd-produto' element={<CadastroProduto />} />
+       <Route path='/cuidado-joias' element={<CuidadoJoias />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

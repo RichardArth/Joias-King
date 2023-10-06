@@ -1,9 +1,11 @@
 import './index.scss';
+import Cabecalho from '../../components/cabecalho';
+import Rodape from '../../components/rodape'
 
 function Index() {
     return(
         <div className='sobrenos'>
-            //cabecalho//
+            <Cabecalho />
                     
                     <div className='sobrenos-meio'>
                         
@@ -49,7 +51,7 @@ function Index() {
                         
                         </div>
                         
-                        //rodape//
+                        <Rodape />
                   
                     
                 
