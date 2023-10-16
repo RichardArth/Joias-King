@@ -1,5 +1,20 @@
-.cuidado-joias {
+.pagina-cuidado-joias {
     background-color: #fff !important;
     display: flex;
     flex-direction: column;
+    height: 120vh;
+    width: 100%;
+
+    .cd-joias-titulo {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border:1px solid black;
+        margin-top: 50px;
+
+        h1 {
+            text-align: center;
+        }
+    }
 }

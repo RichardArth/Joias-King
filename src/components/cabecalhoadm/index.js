@@ -4,20 +4,20 @@ function CabecalhoAdm() {
 
     
     return(
-        <header className='cabecalho'>
-            <div className='cima'>
+        <header className='cabecalho-adm'>
+            <div className='cba-cima'>
                 <div className='esquerda'></div>
 
-                <div className='meio'>
+                <div className='cba-meio'>
                     <img src='./assets/images/logobranca.png'></img>
                 </div>
 
-                <div className='direita'>
+                <div className='cba-direita'>
                     <img src='./assets/images/usuario.png'></img>
                 </div>
             </div>
 
-            <hr className='linha'></hr>   
+            <hr className='cba-linha'></hr>   
         </header>
     )
 }
