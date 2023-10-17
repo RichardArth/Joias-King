@@ -126,31 +126,6 @@ button img{
   padding-right: 50px;
 }
 
-button:hover{
-  animation: jump 1.4s infinite alternate;
-
-    @keyframes jump {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(0);
-      }
-    }
-  }
-
-
-
-a{
-  color: #0038FF;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 5px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
 
 
 

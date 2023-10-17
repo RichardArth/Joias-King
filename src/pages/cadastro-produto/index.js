@@ -14,16 +14,16 @@ function CadastroProduto() {
 
   return (
     <div className="pagina-cadastro-produto">
-      <div className='cabecalho'>
+      <div className='pc-cabecalho'>
         <CabecalhoAdm />
       </div>
 
-      <div className='titulo'>
+      <div className='pc-titulo'>
         <h1>ADICIONAR PRODUTO</h1>
       </div>
 
       <main>
-        <div className='valores'>
+        <div className='pc-valores'>
           <div>
             <h5>NOME DO PRODUTO</h5>-
             <input type='text' value={nomeproduto} onChange={e => setNomeProduto(e.target.value)}></input>
@@ -62,7 +62,7 @@ function CadastroProduto() {
           </div>
         </div>
 
-        <div className='imagem'>
+        <div className='pc-imagem'>
           <div>
             <h1>+</h1>
           </div>
@@ -72,7 +72,7 @@ function CadastroProduto() {
         </div>
       </main>
 
-      <div className="salvar-produto">
+      <div className="pc-salvar-produto">
       <button>SALVAR PRODUTO</button>
       </div>
 

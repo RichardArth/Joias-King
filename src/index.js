@@ -13,13 +13,15 @@ import Sobrenos from './pages/sobrenos/index';
 import Categorias from './pages/categorias/index';
 import CadastroProduto from './pages/cadastro-produto';
 import CuidadoJoias from './pages/cuidado com as joias';
+import LandingPage from './pages/landind page';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='/login' element={<App />}  />
+       <Route path='/' element={<LandingPage />} />
+       <Route path='/login' element={<App />}  />
        <Route path='/cadastro' element={<Cadastro/>} />
        <Route path='/senha' element={<Alterarsenha/>} />
        <Route path='/adm' element={<Loginadm/>} />

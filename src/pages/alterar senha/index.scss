@@ -78,27 +78,9 @@ section{
     color: #fff;
     width: 30vw;
     height: 6vh;
+    font: 25px 'Allerta';
     border-radius: 10px;
   }
-
-  .bt-confirmar:hover{
-    animation: jump 1.4s infinite alternate;
-
-      @keyframes jump {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-15px);
-        }
-      }
-
-      .alterar-s2 input{
-       font-size: 5px;
-        cursor: pointer;
-      }
-    }
-
 
 
 

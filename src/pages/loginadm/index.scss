@@ -85,15 +85,6 @@ section{
   .bt-confirmar:hover{
     animation: jump 1.4s infinite alternate;
 
-      @keyframes jump {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-15px);
-        }
-      }
-
       .loginadm-s2 input{
        font-size: 5px;
         cursor: pointer;

@@ -1,5 +1,8 @@
 
+import { Link } from 'react-router-dom';
 import './App.scss';
+import AlterarSenha from '../alterar senha'
+import Cadastro from '../cadastro';
 
 function App() {
   return (
@@ -28,8 +31,8 @@ function App() {
           <button> <img src='./assets/images/face.png'/> Continue com Facebook</button>
           <button> <img src='./assets/images/google.png'/> Continue com Google </button>
 
-            <a href='/senha'>Esqueci minha senha</a>
-            <a href='/cadastro'>Ainda não sou cliente</a>
+            <Link to={AlterarSenha}>Esqueci minha senha</Link>
+            <Link to={Cadastro}>Ainda não sou cliente</Link>
 
           </div>
         </div>

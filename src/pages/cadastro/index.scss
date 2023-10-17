@@ -84,20 +84,6 @@
     cursor: pointer; 
     font:22px 'Allerta'
   }
-
- .jump-button:hover{
-    animation: jump 1.3s infinite alternate;
-
-      @keyframes jump {
-        0% {
-          transform: translateY(0);
-        }
-        100% {
-          transform: translateY(-15px);
-        }
-      }
-    
- }
   
 
 
