@@ -1,6 +1,8 @@
-import CabecalhoAdm from '../../components/cabecalhoadm'
+import './index.scss'
+import CabecalhoAdm from '../../components/cabecalhoadm';
 import SolicitarSolucao from '../../components/solicitacao';
-import Rodape from '../../components/rodape'
+import Rodape from '../../components/rodape';
+
 
 
 
@@ -19,7 +21,7 @@ function CuidadoJoias() {
             <main>
                 <h2 style={{color: '#DE0F0F'}}>Dicas Essenciais para Cuidar das Suas Joias King com Carinho</h2>
 
-                <h4> Suas Joias King são verdadeiras obras de arte que acrescentam     brilho e estilo à sua vida. Para garantir que essas peças preciosas mantenham seu esplendor ao longo do tempo, aqui estão algumas dicas simples, mas eficazes, de cuidados:</h4>
+                <h4> Suas Joias King são verdadeiras obras de arte que acrescentam brilho e estilo à sua vida. Para garantir que essas peças preciosas mantenham seu esplendor ao longo do tempo, aqui estão algumas dicas simples, mas eficazes, de cuidados:</h4>
 
                 <h5><b style={{color: '#DE0F0F'}}>1</b>.Limpeza Delicada: Limpe suas joias com um pano macio e levemente umedecido para remover sujeira e manter o brilho. Evite produtos químicos agressivos.</h5>
 
