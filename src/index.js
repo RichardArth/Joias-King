@@ -24,7 +24,7 @@ root.render(
        <Route path='/login' element={<App />}  />
        <Route path='/cadastro' element={<Cadastro/>} />
        <Route path='/senha' element={<Alterarsenha/>} />
-       <Route path='/adm' element={<Loginadm/>} />
+       <Route path='/adm-login' element={<Loginadm/>} />
        <Route path='/sobrenos' element={<Sobrenos/>} />
        <Route path='/categorias' element={<Categorias/>} />
        <Route path='/cd-produto' element={<CadastroProduto />} />
