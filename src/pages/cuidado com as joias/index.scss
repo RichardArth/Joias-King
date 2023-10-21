@@ -28,5 +28,167 @@
 
     main {
         display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+
+        h2 {
+            font: 28px 'Allerta';
+            text-align: center;
+        }
+
+        h4 {
+            font: 18px 'Allerta';
+            font-weight: 600;
+        }
+
+        h5 {
+            font:17px 'Allerta'
+        }
+    }
+
+    .tamanho-joia {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #tj-titulo {
+            background-color: #e6e3e3;
+            box-shadow: 5px 5px 50px 0px rgba(0, 0, 0, 0.30);
+            padding: 10px;
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font:20px 'Inter'
+        }
+
+        .tj-introducao {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            padding: 20px;
+            gap:15px;
+
+            h4 {
+                font: 19px 'Inter';
+                
+            }
+
+            img {
+                width: 43%;
+            }
+        }
+
+        .tj-tutorial {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            gap:30px;
+            margin-top: 40px;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap:10px;
+                width: 40%;
+
+                img {
+                    width: 30%;
+                }
+
+                .tjt-mao {
+                    margin-right: 20px;
+                }
+
+                .tjt-regua {
+                    width: 35%;
+                }
+
+                h4 {
+                    padding: 7px;
+                    background-color: #000;
+                    border-radius: 700px;
+                    color:#fff;
+                    width: 8%;
+                    text-align: center;
+                    margin-bottom: 15px;
+                }
+
+                h5 {
+                    text-align: center;
+                    font:18px 'Inter';
+                }
+            }
+        }
+
+        .tabela-tamanhos {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+
+            h3 {
+                font:25px 'Inter';
+                font-weight: 700;
+            }
+
+            .tabela {
+                display: flex;
+                flex-direction: row;
+                gap:5px;
+
+                .cl-cinza-claro {
+                    
+                    padding: 10px;
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 30px;
+                        margin: 5px;
+                        text-align: center;
+                        background-color: #EAEAEA;
+                        box-shadow: 8px 8px 30px 10px rgba(0, 0, 0, 0.30);
+                        border-radius: 5px;
+
+                        h5 {
+                            font:18px 'Inter';
+                        }
+                    }
+                }
+
+                .cl-cinza-escuro {
+                    
+                    padding: 10px;
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 30px;
+                        margin: 5px;
+                        text-align: center;
+                        background-color: #C5C5C5;
+                        box-shadow: 8px 8px 30px 10px rgba(0, 0, 0, 0.30);
+                        border-radius: 5px;
+
+                        h5 {
+                            font:18px 'Inter';
+                        }
+                    }
+                }
+            }
+        }
     }
 }

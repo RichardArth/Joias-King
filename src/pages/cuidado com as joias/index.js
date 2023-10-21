@@ -37,7 +37,9 @@ function CuidadoJoias() {
             </main>
 
             <div className='tamanho-joia'>
-                <h2 style={{color: '#DE0F0F'}}>TAMANHO DA SUA JÓIA</h2>
+                <div id='tj-titulo'>
+                    <h2 style={{color: '#DE0F0F'}}>TAMANHO DA SUA JÓIA</h2>
+                </div>
 
                 <div className='tj-introducao'>
                     <h4>Encontrar o tamanho ideal para suas joias
@@ -57,19 +59,19 @@ function CuidadoJoias() {
                 <div className='tj-tutorial'>
                     <div>
                         <img src='./assets/images/tj-barbante.png'></img>
-                        <h5>1</h5>
+                        <h4>1</h4>
                         <h5>Dê uma volta na articulação do seu dedo com um barbante ou linha;</h5>
                     </div>
 
                     <div>
-                        <img src='./assets/images/tj-mao.png'></img>
-                        <h5>2</h5>
+                        <img className='tjt-mao' src='./assets/images/tj-mao.png'></img>
+                        <h4>2</h4>
                         <h5>Marque a medida exata da circunferência de seu dedo; </h5>
                     </div>
 
                     <div>
-                        <img src='./assets/images/tj-regua.png'></img>
-                        <h5>3</h5>
+                        <img className='tjt-regua' src='./assets/images/tj-regua.png'></img>
+                        <h4>3</h4>
                         <h5>Estenda o fio sobre uma régua e leia o comprimento marcado.</h5>
                     </div>
 
@@ -81,118 +83,118 @@ function CuidadoJoias() {
                     <main className='tabela'>
                         <div className='cl-cinza-claro'>
                             <div>
-                                <h5>Aro 10 5 cm</h5>
+                                <h5>Aro 10 <h5>5 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 16 5,6 cm</h5>
+                                <h5>Aro 16 <h5>5,6 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 22 6,2 cm</h5>
+                                <h5>Aro 22 <h5>6,2 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 28 6,8 cm</h5>
+                                <h5>Aro 28 <h5>6,8 cm</h5></h5>
                             </div>
                         </div>
 
                         <div className='cl-cinza-escuro'>
                             <div>
-                                <h5>Aro 11 5,1 cm</h5>
+                                <h5>Aro 11 <h5>5,1 cm</h5></h5>
                             </div>
                         
                             <div>
-                                <h5>Aro 17 5,7 cm</h5>
+                                <h5>Aro 17 <h5>5,7 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 23 6,3 cm</h5>
+                                <h5>Aro 23 <h5>6,3 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 29 6,9 cm</h5>
+                                <h5>Aro 29 <h5>6,9 cm</h5></h5>
                             </div>
                         </div>
 
                         <div className='cl-cinza-claro'>
                             <div>
-                                <h5>Aro 12 5,2 cm</h5>
+                                <h5>Aro 12 <h5>5,2 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 18 5,8 cm</h5>
+                                <h5>Aro 18 <h5>5,8 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 24 6,4 cm</h5>
+                                <h5>Aro 24 <h5>6,4 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 30 7 cm</h5>
+                                <h5>Aro 30 <h5>7 cm</h5></h5>
                             </div>
                         </div>
 
                         <div className='cl-cinza-escuro'>
                             <div>
-                                <h5>Aro 13 5,3 cm</h5>
+                                <h5>Aro 13 <h5>5,3 cm</h5></h5>
                             </div>
                         
                             <div>
-                                <h5>Aro 19 5,9 cm</h5>
+                                <h5>Aro 19 <h5>5,9 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 25 6,5 cm</h5>
+                                <h5>Aro 25 <h5>6,5 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 31 7,1 cm</h5>
+                                <h5>Aro 31 <h5>7,1 cm</h5></h5>
                             </div>
                         </div>
 
                         <div className='cl-cinza-claro'>
                             <div>
-                                <h5>Aro 14 5,4 cm</h5>
+                                <h5>Aro 14 <h5>5,4 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 20 6 cm</h5>
+                                <h5>Aro 20 <h5>6 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 26 6,6 cm</h5>
+                                <h5>Aro 26 <h5>6 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 32 7,2 cm</h5>
+                                <h5>Aro 32 <h5>7,2 cm</h5></h5>
                             </div>
                         </div>
 
                         <div className='cl-cinza-escuro'>
                             <div>
-                                <h5>Aro 15 5,5 cm</h5>
+                                <h5>Aro 15 <h5>5,5 cm</h5></h5>
                             </div>
                         
                             <div>
-                                <h5>Aro 21 6,1 cm</h5>
+                                <h5>Aro 21 <h5>6,1 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 27 6,7 cm</h5>
+                                <h5>Aro 27 <h5>6,7 cm</h5></h5>
                             </div>
 
                             <div>
-                                <h5>Aro 33 7,3 cm</h5>
+                                <h5>Aro 33 <h5>7,3 cm</h5></h5>
                             </div>
                         </div>
                     </main>
                 </div>
             </div>
-            
-            <SolicitarSolucao />
 
+            <SolicitarSolucao />
             <Rodape />
+            
         </div>
     )
 }

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 
@@ -17,7 +18,7 @@ function Cabecalho() {
 
       <div className='cabecalho-direita'>
         <img className='img-perfil' src='./assets/images/usuario.png'></img>
-        <button>Cadastre-se</button>
+        <Link to='/cadastro'><button>Cadastre-se</button></Link>
 
         <img src='./assets/images/carrinho.png'></img>
       </div>     

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 function Rodape() {
@@ -5,7 +6,7 @@ function Rodape() {
         <div className='rodape'>
             <div className='atendimento'>
                 <div className='rd-logo'>
-                    <img src='./assets/images/logopreta.png'></img>
+                <Link to='/'><img src='./assets/images/logopreta.png'></img></Link>
                 </div>
 
                 <div className='contatos'>
@@ -35,13 +36,13 @@ function Rodape() {
                 <h2>SERVIÇOS</h2>
 
                 <nav>
-                    <h5>Central de Atendimento</h5>
-                    <h5>Sobre Nós</h5>
-                    <h5>Entrega</h5>
-                    <h5>Cadastro</h5>
-                    <h5>Política de Privacidade</h5>
-                    <h5>Cuidado com as suas jóias</h5>
-                    <h5>Trocas e Devoluções</h5>
+                    <Link><h5>Central de Atendimento</h5></Link>
+                    <Link to='/sobrenos'><h5>Sobre Nós</h5></Link>
+                    <Link><h5>Entrega</h5></Link>
+                    <Link to='/cadastro'><h5>Cadastro</h5></Link>
+                    <Link><h5>Política de Privacidade</h5></Link>
+                    <Link to='/cuidado-joias'><h5>Cuidado com as suas jóias</h5></Link>
+                    <Link><h5>Trocas e Devoluções</h5></Link>
                 </nav>
             </div>
 
