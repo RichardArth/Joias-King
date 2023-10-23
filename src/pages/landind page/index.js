@@ -14,20 +14,6 @@ function LandingPage() {
         { id: '3', image: './assets/images/joiareparacao.png'},
     ]
 
-    useEffect(() => {
-
-        function handleResize() {
-            if(window.innerWidth < 720){
-                setSlidePerView(1)
-            }
-            else {
-                setSlidePerView(2)
-            }
-        }
-
-        handleResize;
-    }) 
-
     return(
         <div className='pagina-home'>
             <Cabecalho />
