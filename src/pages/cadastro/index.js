@@ -45,7 +45,7 @@ return(
             <input type="text" placeholder="digite seu e-mail" value={email} onChange={e => setEmail(e.target.value)}/>
 
             <h4>SENHA</h4>
-            <input type="text" placeholder="digite sua senha" value={senha} onChange={e => setSenha(e.target.value)}/>
+            <input type="password" placeholder="digite sua senha" value={senha} onChange={e => setSenha(e.target.value)}/>
 
             <h4>TELEFONE</h4>
             <input type="text" placeholder="digite seu telefone" value={telefone} onChange={e => setTelefone(e.target.value)}/>
@@ -62,10 +62,8 @@ return(
             <h4>CPF</h4>
             <input type="text" placeholder="Digite seu CPF" value={cpf} onChange={e => setCpf(e.target.value)}/>
 
-           
-
           </div>
-          <button onClick={Cadastrar} className='jump-button'>ENTRAR</button>
+          <button onClick={Cadastrar} className='jump-button'>CADASTRAR</button>
         </div>
 
             
