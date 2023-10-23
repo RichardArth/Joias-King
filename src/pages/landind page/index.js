@@ -1,8 +1,33 @@
 import './index.scss';
 import Cabecalho from '../../components/cabecalho';
 import Rodape from '../../components/rodape';
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { useEffect, useState } from 'react';
+
+
 
 function LandingPage() {
+    const[slidePerView, setSlidePerView] = useState(2)
+    const data = [
+        { id: '1', image: './assets/images/modelocomjoias.png'},
+        { id: '2', image: './assets/images/fotoconceito.png'},
+        { id: '3', image: './assets/images/joiareparacao.png'},
+    ]
+
+    useEffect(() => {
+
+        function handleResize() {
+            if(window.innerWidth < 720){
+                setSlidePerView(1)
+            }
+            else {
+                setSlidePerView(2)
+            }
+        }
+
+        handleResize;
+    }) 
+
     return(
         <div className='pagina-home'>
             <Cabecalho />
@@ -10,14 +35,28 @@ function LandingPage() {
             <div className='ph-secao-01'>
                 <div className='ph-s1-categorias'>
                     <a>ALIANÇAS</a>
-                    <a>ANÉIS</a>
+                    <a>ANÉIS</a>    
                     <a>BRINCOS</a>
                     <a>CORRENTES</a>
                     <a>NAMORADOS</a>
                     <a>PET</a>
                 </div>
                 
-                <img src='./assets/images/fotoconceito.png'></img>
+                <Swiper
+                    slidesPerView={slidePerView}
+                    pagination={{ clickable: true}}
+                    navigation
+                >
+                    {data.map( (item) =>(
+                        <SwiperSlide key={item.id}>
+                            <img
+                                src={item.image}
+                                alt="Slider"
+                                classname="slide-item"
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
 
                 <div className='s1-categorias2'>
                     <div>
