@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './index.scss';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Index(){
 
@@ -32,7 +33,7 @@ return(
     <div className='index'>
         <section className='cadastro01'>
         <div className='cabecalho-cadastro'>
-          <img src='./assets/images/logopreta.png'/>
+          <Link to='/'><img src='./assets/images/logopreta.png'/></Link>
         </div>
         
         <div className='cadastro-0'>

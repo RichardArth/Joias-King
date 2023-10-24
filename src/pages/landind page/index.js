@@ -3,6 +3,7 @@ import Cabecalho from '../../components/cabecalho';
 import Rodape from '../../components/rodape';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
   
 
 function LandingPage() {
@@ -132,7 +133,10 @@ function LandingPage() {
                     </div>
 
                     <div>
-                        <img src='./assets/images/qualidade-frete.png'></img>
+                        <div className='frete-gratis'>
+                            <img src='./assets/images/qualidade-frete.png'></img>
+                            <h2>FRETE GRÁTIS</h2>
+                        </div>
                         <h4>Em compras a partir de R$400 ou com o código do vendedor*</h4>
                     </div>
                 </div>
@@ -142,9 +146,9 @@ function LandingPage() {
                 <h3>E quem comprou o que achou?</h3>
 
                 <div className='s3-central-avaliacoes'>
-                    <div>
+                    <div className='s3ca-titulo'>
                         <hr></hr>
-                        <h3><b>Central de Avaliações</b></h3>
+                        <Link><h3 style={{color: '#DE0F0F'}}><b>Central de Avaliações</b></h3></Link>
                         <hr></hr>
                     </div>
 

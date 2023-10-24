@@ -14,6 +14,7 @@ import Categorias from './pages/categorias/index';
 import CadastroProduto from './pages/cadastro-produto';
 import CuidadoJoias from './pages/cuidado com as joias';
 import LandingPage from './pages/landind page';
+import LandingAdm from './pages/landing-page-adm';
 
 import { register } from 'swiper/element/bundle'
 import 'swiper/scss';
@@ -38,6 +39,7 @@ root.render(
        <Route path='/categorias' element={<Categorias/>} />
        <Route path='/cd-produto' element={<CadastroProduto />} />
        <Route path='/cuidado-joias' element={<CuidadoJoias />} />
+       <Route path='/home-adm'element={<LandingAdm />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

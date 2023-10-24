@@ -8,7 +8,6 @@
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-        
 
         > a {
             font-weight: 700;
@@ -46,7 +45,7 @@
             gap:20px;
 
             .categorias2-linha {
-                width: 35%;
+                width: 33%;
                 height: 1px;
                 border: none;
                 background-color: #B88B1B;
@@ -119,6 +118,119 @@
             justify-content: space-evenly;
             align-items: center;
             margin-top: 40px;
+
+            .s2-produtos-vagalume {
+                width: 22%;
+            }
+
+            .s2-produtos-doisaros {
+                width: 23%;
+            }
+
+            div {
+                border: 1px solid black;
+                width: 24%;
+                padding: 10px;
+
+                img {
+                    width: 100%;
+                    margin-bottom: 5px;
+                }
+
+                h5 {
+                    color:#7A6E6E;
+                    font:15px 'Allerta';
+                    margin: 3px;
+                }
+
+                h4 {
+                    font:18px 'Allerta';
+                    margin: 3px;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .ph-s2-qualidades {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            background-color: #EEEEEE;
+            width: 100%;
+            margin-top: 50px;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 20px;
+                text-align: center;
+                
+                h4 {
+                    font:17px 'Allerta';
+                    margin-top: 10px;
+                }
+
+                .frete-gratis{
+                    display: flex;
+                    flex-direction: row;
+                    gap:10px;
+                }
+            }
+        }
+    }
+
+    .ph-secao-03 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
+
+        h3 {
+            font:36px 'Alice';
+            margin-bottom: 15px;
+        }
+
+        .s3-central-avaliacoes {
+
+            .s3ca-titulo {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                hr {
+                    width: 37%;
+                    margin: 5px;
+                }
+
+                h3 {
+                    font:35px 'Alice';
+                    text-shadow: 4px 0px 2px rgba(68, 68, 68, 0.25);
+                }
+            }
+
+            .ca-avaliacoes {
+                padding: 10px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                div {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap:15px;
+                    text-align: center;
+                    color:#504F4F;
+                    font:20px 'Alice'
+                }
+            }
         }
     }
 
@@ -127,6 +239,5 @@
         height: 420px;
         object-fit: cover;
         box-shadow: 10px 2px 10px 5px #353535;
-       
     }
 }
