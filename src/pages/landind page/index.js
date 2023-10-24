@@ -3,16 +3,17 @@ import Cabecalho from '../../components/cabecalho';
 import Rodape from '../../components/rodape';
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { useEffect, useState } from 'react';
-
-
+  
 
 function LandingPage() {
-    const[slidePerView, setSlidePerView] = useState(2)
+    const[slidePerview] = useState(1)
     const data = [
-        { id: '1', image: './assets/images/modelocomjoias.png'},
+        { id: '1', image: './assets/images/mulhercolar.jpg'},
         { id: '2', image: './assets/images/fotoconceito.png'},
-        { id: '3', image: './assets/images/joiareparacao.png'},
+        { id: '3', image: './assets/images/joiasmulher.jpg'},
     ]
+
+    
 
     return(
         <div className='pagina-home'>
@@ -29,16 +30,21 @@ function LandingPage() {
                 </div>
                 
                 <Swiper
-                    slidesPerView={slidePerView}
+                    slidesPerView={slidePerview}
                     pagination={{ clickable: true}}
                     navigation
+                    autoplay= {{
+                        delay:2500
+                    }}
+                   
+                   
                 >
                     {data.map( (item) =>(
                         <SwiperSlide key={item.id}>
                             <img
                                 src={item.image}
                                 alt="Slider"
-                                classname="slide-item"
+                                className="slide-item"
                             />
                         </SwiperSlide>
                     ))}

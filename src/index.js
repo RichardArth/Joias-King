@@ -16,13 +16,14 @@ import CuidadoJoias from './pages/cuidado com as joias';
 import LandingPage from './pages/landind page';
 
 import { register } from 'swiper/element/bundle'
-
-register();
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/scss/scrollbar';
-  
+
+register();
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
