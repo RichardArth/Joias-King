@@ -6,11 +6,13 @@ import { useEffect, useState } from 'react';
   
 
 function LandingPage() {
-    const[slidePerview] = useState(1)
+    const[slidePerview] = useState(2)
     const data = [
         { id: '1', image: './assets/images/mulhercolar.jpg'},
-        { id: '2', image: './assets/images/fotoconceito.png'},
-        { id: '3', image: './assets/images/joiasmulher.jpg'},
+        { id: '2', image: './assets/images/joiasmulher.jpg'},
+        { id: '3', image: './assets/images/joiareparação.jpg'},
+        { id: '4', image: './assets/images/joiapet2.jpg'},
+        
     ]
 
     
@@ -31,8 +33,14 @@ function LandingPage() {
                 
                 <Swiper
                     slidesPerView={slidePerview}
-                    pagination={{ clickable: true}}
-                    navigation
+                    pagination={{ clickable: true,}}
+                    navigation={{
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                        disabledClass: 'swiper-button-disabled',
+                        prevElStyle: { color: 'green' }, 
+                        nextElStyle: { color: 'green' }, 
+                      }}
                     autoplay= {{
                         delay:2500
                     }}
