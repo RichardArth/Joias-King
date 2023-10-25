@@ -13,14 +13,14 @@ function Cabecalho() {
         </div>
 
         <div className='cabecalho-meio'>
-        <img src='./assets/images/logobranca.png'/>
+        <Link to='/'><img src='./assets/images/logobranca.png'/></Link>
         </div>
 
       <div className='cabecalho-direita'>
         <img className='img-perfil' src='./assets/images/usuario.png'></img>
         <Link to='/cadastro'><button>Cadastre-se</button></Link>
 
-        <img src='./assets/images/carrinho.png'></img>
+      <Link to='/carrinho'><img src='./assets/images/carrinho.png'></img></Link>
       </div>     
     </div>
     )

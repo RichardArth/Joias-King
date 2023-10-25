@@ -1,0 +1,22 @@
+
+
+
+
+
+
+
+
+
+
+
+.ph-s1-categorias {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+    > a {
+        font-weight: 700;
+        font: 15px 'Allerta'
+    }
+}
