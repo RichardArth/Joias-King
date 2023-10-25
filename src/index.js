@@ -16,6 +16,7 @@ import CuidadoJoias from './pages/cuidado com as joias';
 import LandingPage from './pages/landind page';
 import LandingAdm from './pages/landing-page-adm';
 import Carrinho from './pages/carrinho';
+import Avaliacoes from './pages/central-avaliacoes';
 
 import { register } from 'swiper/element/bundle'
 import 'swiper/scss';
@@ -42,6 +43,7 @@ root.render(
        <Route path='/cuidado-joias' element={<CuidadoJoias />} />
        <Route path='/home-adm'element={<LandingAdm />} />
        <Route path='/carrinho' element={<Carrinho/>} />
+       <Route path='/central-avaliaçoes' element={<Avaliacoes/>} />
        </Routes>
     </BrowserRouter>
   </React.StrictMode>

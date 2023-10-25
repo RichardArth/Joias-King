@@ -26,9 +26,35 @@ function Carrinho() {
 
                 <h1>Meu Carrinho:</h1>
 
-                <div className='carrinho-'>
+                <hr></hr>
 
-                </div>                
+                <div className='carrinho-pg'>
+                    
+                    <div className='carrinho-s1'>
+                    <img src='./assets/images/anelprata.png'/>
+                    </div>
+
+                    <div className='carrinho-s2'>
+                    <h5>Alianças Louveira + Anel solitário Olimpo
+                       Namoro e Compromisso em Prata 0,950</h5>
+
+                    <div className='carrinho-s2-qtd'>
+                    <input type='Number'></input>
+                    <p>Em estoque</p>
+
+                    </div>
+                    <div className='carrinho-s2-excluir'>
+                        
+                    <h3>Excluir   |    Adicionar à wishlist</h3>
+                    </div>
+                    
+                    </div>
+
+                    <p>R$299,90</p>
+
+                </div> 
+
+                 <hr></hr>               
 
                 </div>
 

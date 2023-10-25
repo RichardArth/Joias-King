@@ -1,7 +1,54 @@
+.meio-carrinho h1{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
 
+.carrinho-pg{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
 
+.carrinho-pg p{
+    color: #B88B1B;
+}
 
+.carrinho-s1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrinho-s1 img{
+    width: auto;
+    height: 200px;
+}
+
+.carrinho-s2 h5{
+        width: 350px;
+        font: 15px 'Allerta';
+}
+
+.carrinho-s2-qtd{
+    padding: 10px;
+}
+
+.carrinho-s2-qtd p{
+    color: #0B8600;
+}
+
+.carrinho-s2-qtd input{
+    background-color: #D3A400;
+    color: #ffffff;
+    text-decoration: none;
+    border: none;
+    border-radius: 70px;
+    width: 35%;
+    height: 30px;
+}
 
 
 
