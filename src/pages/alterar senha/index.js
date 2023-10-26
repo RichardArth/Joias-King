@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 function Index() {
@@ -5,7 +6,7 @@ function Index() {
         <div className='Index'>
             <section className='alterarsenha'>
         <div className='cabecalho-alterar'>
-          <img src='./assets/images/logopreta.png'/>
+        <Link to='/'><img src='./assets/images/logopreta.png'/></Link>
         </div>
         <div className='alterar'>
           <div className='alterar-s1'>

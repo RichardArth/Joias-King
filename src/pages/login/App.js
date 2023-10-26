@@ -10,7 +10,7 @@ function App() {
 
       <section className='login01'>
         <div className='cabecalho-login'>
-          <img src='./assets/images/logopreta.png'/>
+       <Link to='/'><img src='./assets/images/logopreta.png'/></Link>
         </div>
         <div className='login'>
           <div className='login-s1'>
