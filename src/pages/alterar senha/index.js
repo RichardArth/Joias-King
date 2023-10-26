@@ -14,10 +14,10 @@ function Index() {
           </div>
           <div className='alterar-s2'>
             <h4>SENHA NOVA</h4>
-            <input type="text" placeholder="digite seu senha"/>
+            <input type="password" placeholder="digite seu senha"/>
 
             <h4>REPETIR SENHA</h4>
-            <input type="text" placeholder="digite sua nova senha"/>
+            <input type="password" placeholder="digite sua nova senha"/>
 
             <button className='bt-confirmar'>CONFIRMAR</button>
 

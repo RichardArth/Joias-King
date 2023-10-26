@@ -65,7 +65,7 @@
   font-size: 20px;
   font-family: Allerta;
   margin-bottom: 25px;
-
+  outline: none;
   border: none;
   color: #D1C9C9;
   background-color: #fff;
@@ -79,19 +79,6 @@
   border: none;
   color: #fff;
 }
-
-.bt-log:hover{
-  animation: jump 1.4s infinite alternate;
-
-    @keyframes jump {
-      0% {
-        transform: translateY(0);
-      }
-      100% {
-        transform: translateY(-15px);
-      }
-    }
-  }
 
 .login-s2 .s3-login{
   display: flex;

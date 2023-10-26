@@ -25,7 +25,7 @@ function CadastroProduto() {
       <main>
         <div className='pc-valores'>
           <div>
-            <h5>NOME DO PRODUTO</h5>-
+            <h5>NOME DO PRODUTO</h5>
             <input type='text' value={nomeproduto} onChange={e => setNomeProduto(e.target.value)}></input>
           </div>
 

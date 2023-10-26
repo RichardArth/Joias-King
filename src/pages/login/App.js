@@ -22,7 +22,7 @@ function App() {
             <input type="text" placeholder="digite seu e-mail"/>
 
             <h4>SENHA</h4>
-            <input type="text" placeholder="digite sua senha"/>
+            <input type="password" placeholder="digite sua senha"/>
 
             <button className='bt-log'>LOGIN</button>
 
@@ -31,8 +31,8 @@ function App() {
           <button> <img src='./assets/images/face.png'/> Continue com Facebook</button>
           <button> <img src='./assets/images/google.png'/> Continue com Google </button>
 
-            <Link to={AlterarSenha}>Esqueci minha senha</Link>
-            <Link to={Cadastro}>Ainda não sou cliente</Link>
+            <Link to='/AlterarSenha'>Esqueci minha senha</Link>
+            <Link to='/cadastro'>Ainda não sou cliente</Link>
 
           </div>
         </div>
