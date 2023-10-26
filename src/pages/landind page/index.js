@@ -24,7 +24,7 @@ function LandingPage() {
 
             <div className='ph-secao-01'>
                 <div className='ph-s1-categorias'>
-                    <a>ALIANÇAS</a>
+                    <Link to='/pg-aliancas'><a>ALIANÇAS</a></Link>
                     <a>ANÉIS</a>    
                     <a>BRINCOS</a>
                     <a>CORRENTES</a>

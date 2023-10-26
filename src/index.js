@@ -17,6 +17,7 @@ import LandingPage from './pages/landind page';
 import LandingAdm from './pages/landing-page-adm';
 import Carrinho from './pages/carrinho';
 import Avaliacoes from './pages/central-avaliacoes';
+import Aliancas from './pages/aliancas';
 
 import { register } from 'swiper/element/bundle'
 import 'swiper/scss';
@@ -44,6 +45,7 @@ root.render(
        <Route path='/home-adm'element={<LandingAdm />} />
        <Route path='/carrinho' element={<Carrinho/>} />
        <Route path='/central-avaliaçoes' element={<Avaliacoes/>} />
+       <Route path='/pg-aliancas' element={<Aliancas/>}/>
        </Routes>
     </BrowserRouter>
   </React.StrictMode>

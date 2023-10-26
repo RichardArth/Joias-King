@@ -1,9 +1,11 @@
 import './index.scss';
+import Cabecalho from '../../components/cabecalho';
+import Rodape from '../../components/rodape';
 
 function Index() {
     return(
         <div className='categorias'>
-            
+            <Cabecalho/>
             <div className='categorias-01'>
             <hr></hr>
             <h1>PROCURE POR CATEGORIAS</h1>
