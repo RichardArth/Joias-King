@@ -24,12 +24,12 @@ function LandingPage() {
 
             <div className='ph-secao-01'>
                 <div className='ph-s1-categorias'>
-                    <Link to='/pg-aliancas'><a>ALIANÇAS</a></Link>
-                    <a>ANÉIS</a>    
-                    <a>BRINCOS</a>
-                    <a>CORRENTES</a>
-                    <a>NAMORADOS</a>
-                    <a>PET</a>
+                    <Link to='/aliancas'><a>ALIANÇAS</a></Link>
+                    <Link to='/aneis'><a>ANÉIS</a> </Link>   
+                    <Link to='/brincos'><a>BRINCOS</a></Link>
+                    <Link to='/correntes'><a>CORRENTES</a></Link>
+                    <Link to='/namorados'><a>NAMORADOS</a></Link>
+                    <Link to='/pet'><a>PET</a></Link>
                 </div>
                 
                 <Swiper
@@ -148,7 +148,7 @@ function LandingPage() {
                 <div className='s3-central-avaliacoes'>
                     <div className='s3ca-titulo'>
                         <hr></hr>
-                        <Link><h3 style={{color: '#DE0F0F'}}><b>Central de Avaliações</b></h3></Link>
+                        <Link to='/central-avaliaçoes'><h3 style={{color: '#DE0F0F'}}><b>Central de Avaliações</b></h3></Link>
                         <hr></hr>
                     </div>
 

@@ -18,6 +18,11 @@ import LandingAdm from './pages/landing-page-adm';
 import Carrinho from './pages/carrinho';
 import Avaliacoes from './pages/central-avaliacoes';
 import Aliancas from './pages/aliancas';
+import Aneis from './pages/aneis';
+import Brincos from './pages/brincos';
+import Correntes from './pages/correntes';
+import Namorados from './pages/namorados';
+import Pet from './pages/pet';
 
 import { register } from 'swiper/element/bundle'
 import 'swiper/scss';
@@ -45,7 +50,12 @@ root.render(
        <Route path='/home-adm'element={<LandingAdm />} />
        <Route path='/carrinho' element={<Carrinho/>} />
        <Route path='/central-avaliaçoes' element={<Avaliacoes/>} />
-       <Route path='/pg-aliancas' element={<Aliancas/>}/>
+       <Route path='/aliancas' element={<Aliancas/>}/>
+       <Route path='/aneis' element={<Aneis/>}/>
+       <Route path='/brincos' element={<Brincos/>}/>
+       <Route path='/correntes' element={<Correntes/>}/>
+       <Route path='/namorados' element={<Namorados/>}/>
+       <Route path='/pet' element={<Pet/>}/>
        </Routes>
     </BrowserRouter>
   </React.StrictMode>

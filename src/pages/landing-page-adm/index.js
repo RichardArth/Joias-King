@@ -47,7 +47,7 @@ function LandingAdm() {
                 <main className='s1p-produtos'>
                     <div className='ficha-produto'>
                         <div className='imagem-produto'>
-                        <img src='./assets/images/produto-home-adm.png'></img>
+                        <img src='./assets/images/colar-01.png'></img>
                         </div>
 
                         <div className='descricao-produto'>

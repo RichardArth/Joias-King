@@ -7,7 +7,7 @@ function Cabecalho() {
         <div className='cabecalho'>
           
         <div className='cabecalho-esquerda'>
-        <input type="text" id="search-input" placeholder="Pesquise sua Joia"/>
+        <input type="text" id="search-input" placeholder="Pesquise sua Joia"></input>
 
         <img src='./assets/images/lupa.png'></img>
         </div>
@@ -18,7 +18,7 @@ function Cabecalho() {
 
       <div className='cabecalho-direita'>
         <img className='img-perfil' src='./assets/images/usuario.png'></img>
-        <Link to='/cadastro'><button>Cadastre-se</button></Link>
+        <Link to='/login'><button>Login</button></Link>
 
       <Link to='/carrinho'><img src='./assets/images/carrinho.png'></img></Link>
       </div>     
