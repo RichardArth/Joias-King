@@ -1,0 +1,30 @@
+.produtos-s1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.ficha-produtos {
+    border: 1px solid black;
+    width: 24%;
+    padding: 10px;
+   
+
+    img {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    h5 {
+        color:#7A6E6E;
+        font:15px 'Allerta';
+        margin: 3px;
+    }
+
+    h4 {
+        font:18px 'Allerta';
+        margin: 3px;
+        font-weight: 600;
+    }
+}

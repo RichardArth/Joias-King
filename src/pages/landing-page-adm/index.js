@@ -23,7 +23,7 @@ function LandingAdm() {
                 <nav className='s1eadm-produtos'>
                     <h2>PRODUTOS</h2>
                     <li><Link to='/cd-produto'>ADICIONAR PRODUTO</Link></li>
-                    <li><Link to='/home-adm'>PRODUTOS</Link></li>
+                    <li><Link to='/produtos'>PRODUTOS</Link></li>
                     <li>MELHORES AVALIAÇÕES</li>
                     <li>OS MAIS COMPRADOS</li>
                     <li>GRÁFICO DE VENDAS</li>

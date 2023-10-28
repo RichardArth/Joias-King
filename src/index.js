@@ -23,6 +23,7 @@ import Brincos from './pages/brincos';
 import Correntes from './pages/correntes';
 import Namorados from './pages/namorados';
 import Pet from './pages/pet';
+import Produtos from './pages/produtos';
 
 import { register } from 'swiper/element/bundle'
 import 'swiper/scss';
@@ -56,6 +57,7 @@ root.render(
        <Route path='/correntes' element={<Correntes/>}/>
        <Route path='/namorados' element={<Namorados/>}/>
        <Route path='/pet' element={<Pet/>}/>
+       <Route path='/produtos' element={<Produtos/>}/>
        </Routes>
     </BrowserRouter>
   </React.StrictMode>

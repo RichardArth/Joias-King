@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './index.scss';
 
 function CabecalhoAdm() {
@@ -9,7 +10,7 @@ function CabecalhoAdm() {
                 <div className='esquerda'></div>
 
                 <div className='cba-meio'>
-                    <img src='./assets/images/logobranca.png'></img>
+                    <Link to='/home-adm'><img src='./assets/images/logobranca.png'></img></Link>
                 </div>
 
                 <div className='cba-direita'>

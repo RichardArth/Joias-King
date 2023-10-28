@@ -69,22 +69,22 @@ function LandingPage() {
                     <div className='ct2-produtos'>
                         <div>
                             <img src='./assets/images/ct-colar.png'></img>
-                            <h5>COLARES</h5>
+                            <Link to='./correntes'><h5>COLARES</h5></Link>
                         </div>
 
                         <div className='ct2p'>
                             <img src='./assets/images/ct-brinco.png'></img>
-                            <h5>BRINCOS</h5>
+                            <Link to='./brincos'><h5>BRINCOS</h5></Link>
                         </div>
 
                         <div>
                             <img src='./assets/images/ct-pet.png'></img>
-                            <h5>PET</h5>
+                            <Link to='./pet'><h5>PET</h5></Link>
                         </div>
 
                         <div className='ct2p'>
                             <img src='./assets/images/ct-casamento.png'></img>
-                            <h5>CASAMENTO</h5>
+                            <Link to='aliancas'><h5>CASAMENTO</h5></Link>
                         </div>
 
                     </div>
