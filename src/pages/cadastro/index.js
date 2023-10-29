@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './index.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../../constants.js';
 
 function Index(){
 
@@ -24,7 +25,7 @@ function Index(){
       cpf: cpf
     }
 
-    let url = 'http://localhost:5000/cadastrar';
+    let url = API_URL + '/cadastrar';
     let r = await axios.post(url, cliente);
   }
 

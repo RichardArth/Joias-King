@@ -1,8 +1,6 @@
 
 import { Link } from 'react-router-dom';
 import './App.scss';
-import AlterarSenha from '../alterar senha'
-import Cadastro from '../cadastro';
 
 function App() {
   return (
