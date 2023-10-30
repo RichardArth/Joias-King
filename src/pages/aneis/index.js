@@ -12,7 +12,7 @@ function Aliancas() {
             <Cabecalho />
 
             <div className='produto-ficha-s1'>
-                    <div className='ficha-produto'>
+                    <div className='produto-s2'>
                         <img src='./assets/images/nv-anel.png'></img>
                         <h5>Anel dois aros pave Ouro amarelo com Diamantes</h5>
                         <h5>Por R$ 6.760,00  ou</h5>

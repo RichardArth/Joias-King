@@ -2,6 +2,15 @@ import CabecalhoAdm from '../../components/cabecalhoadm/index.js';
 import './index.scss';
 import { useState } from 'react';
 
+
+function escolherimagem() {
+  document.getElementById('img-produto').click();
+}
+
+function mostrarimg(){
+
+}
+
 function CadastroProduto() {
 
   const[nomeproduto, setNomeProduto] = useState('');
@@ -47,7 +56,7 @@ function CadastroProduto() {
           </div>
 
           <div>
-            <h5>MATERIAIS</h5>
+            <h5>DETALHES</h5>
             <input type='text' value={materiais} onChange={e => setMateriais(e.target.value)}></input>
           </div>
 
@@ -63,8 +72,10 @@ function CadastroProduto() {
         </div>
 
         <div className='pc-imagem'>
-          <div>
+          <div className='img-produto-adm' onClick={escolherimagem}>
             <h1>+</h1>
+            <img src={mostrarimg()} alt='' />
+            <input type='file' id='img-produto' onChange={e => setImagem(e.target.files[3])}/>
           </div>
 
           <h5>Adicionar Imagens</h5>
@@ -75,7 +86,6 @@ function CadastroProduto() {
       <div className="pc-salvar-produto">
       <button>SALVAR PRODUTO</button>
       </div>
-
     </div>
   );
 }

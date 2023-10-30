@@ -19,6 +19,14 @@
         padding: 8px;
         font: 17px 'Allerta';
     }
+    .img-produto-adm{
+        cursor: pointer;
+    }
+
+    #img-produto{
+        visibility: hidden;
+        position: absolute;
+    }
 
     main {
         width: 90%;
@@ -61,6 +69,7 @@
                 padding: 7px 20px;
                 border-radius: 6px;
                 margin-top: 10px;
+                
             }
 
             select {
