@@ -1,8 +1,36 @@
-
 import { Link } from 'react-router-dom';
 import './App.scss';
+import { useState } from 'react';
+import { API_URL } from '../../constants';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 function App() {
+
+  const[email, setEmail] = useState('');
+  const[senha, setSenha] = useState('');
+  const[erro,setErro] = useState('');
+
+  let navigate = useNavigate();
+
+  async function Logar() {
+    try {
+      let r = await axios.post(API_URL + '/login', {
+        email: email,
+        senha: senha
+      })
+      
+      navigate('/home-adm')
+
+    }
+    
+    catch (err){
+      if(err.reponse.status === 401){
+        setErro(err.response.data.erro)
+      }
+    }
+  }
+
   return (
     <div className="App">
 
@@ -23,6 +51,7 @@ function App() {
             <input type="password" placeholder="digite sua senha"/>
 
             <button className='bt-log'>LOGIN</button>
+            {erro}
 
             <h4 className='s3-login'>OU</h4>
 

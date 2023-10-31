@@ -9,11 +9,11 @@
         justify-content: space-evenly;
         align-items: center;
 
-        > a {
-            font-weight: 700;
-            font: 15px 'Allerta';
-            text-decoration: none;
-            color: #000;
+        a:-webkit-any-link {
+            color:#000 !important;
+            cursor: pointer;
+            text-decoration:none;
+            margin-top: 20px;
         }
     }
 
@@ -203,6 +203,12 @@
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
+
+                a:-webkit-any-link {
+                    color:rgb(222, 15, 15);
+                    cursor: pointer;
+                    text-decoration:none;
+                }
 
                 hr {
                     width: 37%;

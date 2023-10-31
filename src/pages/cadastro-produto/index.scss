@@ -5,6 +5,11 @@
     justify-content: center;
     align-items: center;
 
+    .pc-cabecalho {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .pc-titulo {
         display: flex;
         justify-content: center;
@@ -17,7 +22,7 @@
         border-radius: 4px;
         width: 100%;
         padding: 8px;
-        font: 17px 'Allerta';
+        font: 12px 'Allerta';
     }
     .img-produto-adm{
         cursor: pointer;
@@ -134,12 +139,12 @@
         color: #fff;
         border: none;
         border-radius: 8px;
-        width: 18vw;
+        width: 18%;
         max-width: 100%;
         min-width: 80%;
         margin-bottom: 40px;
         cursor: pointer;
-        font:18px 'Allerta';
+        font:20px 'Alice';
         transition: background-color 0.6s ease-in-out 100ms;
     }
     
@@ -174,12 +179,12 @@
     }
 
     .pc-salvar-produto > button {
-        font:15px 'Allerta';
+        font:13px 'Alice';
         width: 18vw;
+        padding: 7px;
     }
 
 
 }
-
 
 }

@@ -124,4 +124,10 @@
             }
         }
     }
+
+    a:-webkit-any-link {
+        color:#000 !important;
+        cursor: pointer;
+        text-decoration:none;
+    }
 }

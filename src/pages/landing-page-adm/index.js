@@ -9,7 +9,7 @@ function LandingAdm() {
                 <header>
                     <div>
                         <img src='./assets/images/usuario.png'></img>
-                        <h4>cacique.adm@gmail.com</h4>
+                        <h4>richardarthur@gmail.com</h4>
                     </div>
                     <hr></hr>
                 </header>
@@ -40,7 +40,7 @@ function LandingAdm() {
 
                 <div className='s1admp-titulo'>
                     <h1>
-                        SEJA BEM-VINDO CACIQUE
+                        SEJA BEM-VINDO RICHARD
                     </h1>
                 </div>
 

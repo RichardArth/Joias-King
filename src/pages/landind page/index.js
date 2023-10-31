@@ -7,33 +7,7 @@ import { Link } from 'react-router-dom';
   
 
 function LandingPage() {
-    
-     const reviews = [
-        {
-          id: '1',
-          imageLeft: './assets/images/aspas-esquerda.png',
-          text: 'Parabenizo a toda a equipe e garanto a honestidade na prestação de serviços. Satisfação garantida!',
-          imageRight: './assets/images/aspas-direita.png',
-          author: 'RogerinMilGraus_zs', 
-        },
-        {
-          id: '2',
-          imageLeft: './assets/images/aspas-esquerda.png',
-          text: 'Muito satisfeito com o produto.',
-          imageRight: './assets/images/aspas-direita.png', 
-          author: 'Kelson O. Damasceno',
-        },
-        {
-            id: '3',
-            imageLeft: './assets/images/aspas-esquerda.png',
-            text: 'Joia impecável, recomendo muito!',
-            imageRight: './assets/images/aspas-direita.png', 
-            author: 'Pedro Paulo D. A. Oca',
-          },
-
-
-      ];
-
+    const[slidePerview] = useState(2)
     const data = [
         { id: '1', image: './assets/images/mulhercolar.jpg'},
         { id: '2', image: './assets/images/joiasmulher.jpg'},
@@ -50,16 +24,17 @@ function LandingPage() {
 
             <div className='ph-secao-01'>
                 <div className='ph-s1-categorias'>
-                    <Link to='/aliancas'><a>ALIANÇAS</a></Link>
-                    <Link to='/aneis'><a>ANÉIS</a> </Link>   
-                    <Link to='/brincos'><a>BRINCOS</a></Link>
-                    <Link to='/correntes'><a>CORRENTES</a></Link>
-                    <Link to='/namorados'><a>NAMORADOS</a></Link>
-                    <Link to='/pet'><a>PET</a></Link>
+                    <Link to='/aliancas'>ALIANÇAS</Link>
+                    <Link to='/aneis'>ANÉIS</Link>   
+                    <Link to='/brincos'>BRINCOS</Link>
+                    <Link to='/correntes'>CORRENTES</Link>
+                    <Link to='/namorados'>NAMORADOS</Link>
+                    <Link to='/pet'>PET</Link>
                 </div>
                 
                 <Swiper
-                    slidesPerView={2}
+                    slidesPerView={slidePerview}
+                    pagination={{ clickable: true,}}
                     navigation={{
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
@@ -109,7 +84,7 @@ function LandingPage() {
 
                         <div className='ct2p'>
                             <img src='./assets/images/ct-casamento.png'></img>
-                            <Link to='aliancas'><h5>CASAMENTO</h5></Link>
+                            <Link to='/aliancas'><h5>CASAMENTO</h5></Link>
                         </div>
 
                     </div>
@@ -177,31 +152,15 @@ function LandingPage() {
                         <hr></hr>
                     </div>
 
-                    <Swiper 
-                    spaceBetween={10}
-                    slidesPerView={1}
-                    loop={true}
-                    loopFillGroupWithBlank={true}
-                    autoplay= {{
-                        delay: 2500
-                    }}
+                    <div className='ca-avaliacoes'>
+                        <div>
+                            <img src='./assets/images/aspas-esquerda.png'></img>
+                            <h4>Há anos compro joias na Jóias King e adoro o atendimento, a perfeição, acabamento e qualidade das peças. Parabenizo a toda a equipe e garanto a honestidade na prestação de serviços. Satisfação garantida! </h4>
+                            <img src='./assets/images/aspas-direita.png'></img>
+                        </div>
 
-                    >
-                        {reviews.map((review) => (
-                            <SwiperSlide key={review.id}>
-                            <div className='ca-avaliacoes'>
-                                <div>
-                                    <img src={review.imageLeft} alt="Aspas esquerda"></img>
-                                    <h4>{review.text}</h4>
-                                    <img src={review.imageRight} alt="Aspas direita"></img>
-                                </div>
-
-                                <div><h3>{review.author}</h3></div>
-                            </div>
-                        </SwiperSlide>
-
-                        ))}
-                    </Swiper>
+                        <div><h3>RogerinMilGraus_zs</h3></div>
+                    </div>
                 </div>
             </div>
 

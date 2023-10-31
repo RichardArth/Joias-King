@@ -2,7 +2,6 @@ import CabecalhoAdm from '../../components/cabecalhoadm/index.js';
 import './index.scss';
 import { useState } from 'react';
 
-
 function escolherimagem() {
   document.getElementById('img-produto').click();
 }

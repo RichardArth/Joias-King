@@ -131,4 +131,10 @@
             margin: 5px;
         }
     }
+
+    a:-webkit-any-link {
+        color:#fff !important;
+        cursor: pointer;
+        text-decoration:none;
+    }
 }
