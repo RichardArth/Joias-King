@@ -1,0 +1,32 @@
+.atendimento{
+    display: flex;
+    flex-direction: column;
+}
+
+.atendimento h1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.atendimento-pesquisa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.atendimento-pesquisa img{
+    height: auto;
+    width: 4%;
+    
+}
+
+.atendimento-pesquisa input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000000;
+    width: 80%;
+    cursor: pointer;
+}

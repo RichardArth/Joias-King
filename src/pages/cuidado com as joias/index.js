@@ -1,5 +1,5 @@
 import './index.scss'
-import CabecalhoAdm from '../../components/cabecalhoadm';
+import Cabecalho from '../../components/cabecalho';
 import SolicitarSolucao from '../../components/solicitacao';
 import Rodape from '../../components/rodape';
 
@@ -10,7 +10,7 @@ function CuidadoJoias() {
     return(
         <div className="pagina-cuidado-joias">
             <header>
-                <CabecalhoAdm />
+                <Cabecalho />
             </header>
 
             <div className='cd-joias-titulo'>

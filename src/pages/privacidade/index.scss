@@ -1,0 +1,39 @@
+.privacidade{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+
+
+.privacidade-s1 {
+    background-color: #D9D9D9;
+    padding: 1% 30.5%;
+    
+}
+
+.privacidade-s1 h1{
+    font: 35px 'Allerta';
+    width: 500px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.privacidade h3{
+    color: #000000;
+    width: 1200px;
+    margin-left: 3%;
+}
+
+.privacidade h2{
+    color: #D69C0C;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 20px;
+    margin-left: 4%;
+}

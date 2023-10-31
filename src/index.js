@@ -24,6 +24,9 @@ import Correntes from './pages/correntes';
 import Namorados from './pages/namorados';
 import Pet from './pages/pet';
 import Produtos from './pages/produtos';
+import Privacidade from './pages/privacidade';
+import Centralatendimento from './pages/central-atendimento';
+import Trocas from './pages/trocas-devoluçoes';
 
 import { register } from 'swiper/element/bundle'
 import 'swiper/scss';
@@ -58,6 +61,9 @@ root.render(
        <Route path='/namorados' element={<Namorados/>}/>
        <Route path='/pet' element={<Pet/>}/>
        <Route path='/produtos' element={<Produtos/>}/>
+       <Route path='/politica-privacidade' element={< Privacidade/>} />
+       <Route path='/central-atendimento' element={< Centralatendimento/>} />
+       <Route path='/trocas-devoluçao' element={< Trocas/>} />
        </Routes>
     </BrowserRouter>
   </React.StrictMode>
