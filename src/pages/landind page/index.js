@@ -7,7 +7,33 @@ import { Link } from 'react-router-dom';
   
 
 function LandingPage() {
-    const[slidePerview] = useState(2)
+    
+     const reviews = [
+        {
+          id: '1',
+          imageLeft: './assets/images/aspas-esquerda.png',
+          text: 'Parabenizo a toda a equipe e garanto a honestidade na prestação de serviços. Satisfação garantida!',
+          imageRight: './assets/images/aspas-direita.png',
+          author: 'RogerinMilGraus_zs', 
+        },
+        {
+          id: '2',
+          imageLeft: './assets/images/aspas-esquerda.png',
+          text: 'Muito satisfeito com o produto.',
+          imageRight: './assets/images/aspas-direita.png', 
+          author: 'Kelson O. Damasceno',
+        },
+        {
+            id: '3',
+            imageLeft: './assets/images/aspas-esquerda.png',
+            text: 'Joia impecável, recomendo muito!',
+            imageRight: './assets/images/aspas-direita.png', 
+            author: 'Pedro Paulo D. A. Oca',
+          },
+
+
+      ];
+
     const data = [
         { id: '1', image: './assets/images/mulhercolar.jpg'},
         { id: '2', image: './assets/images/joiasmulher.jpg'},
@@ -33,8 +59,7 @@ function LandingPage() {
                 </div>
                 
                 <Swiper
-                    slidesPerView={slidePerview}
-                    pagination={{ clickable: true,}}
+                    slidesPerView={2}
                     navigation={{
                         nextEl: '.swiper-button-next',
                         prevEl: '.swiper-button-prev',
@@ -152,15 +177,31 @@ function LandingPage() {
                         <hr></hr>
                     </div>
 
-                    <div className='ca-avaliacoes'>
-                        <div>
-                            <img src='./assets/images/aspas-esquerda.png'></img>
-                            <h4>Há anos compro joias na Jóias King e adoro o atendimento, a perfeição, acabamento e qualidade das peças. Parabenizo a toda a equipe e garanto a honestidade na prestação de serviços. Satisfação garantida! </h4>
-                            <img src='./assets/images/aspas-direita.png'></img>
-                        </div>
+                    <Swiper 
+                    spaceBetween={10}
+                    slidesPerView={1}
+                    loop={true}
+                    loopFillGroupWithBlank={true}
+                    autoplay= {{
+                        delay: 2500
+                    }}
 
-                        <div><h3>RogerinMilGraus_zs</h3></div>
-                    </div>
+                    >
+                        {reviews.map((review) => (
+                            <SwiperSlide key={review.id}>
+                            <div className='ca-avaliacoes'>
+                                <div>
+                                    <img src={review.imageLeft} alt="Aspas esquerda"></img>
+                                    <h4>{review.text}</h4>
+                                    <img src={review.imageRight} alt="Aspas direita"></img>
+                                </div>
+
+                                <div><h3>{review.author}</h3></div>
+                            </div>
+                        </SwiperSlide>
+
+                        ))}
+                    </Swiper>
                 </div>
             </div>
 
