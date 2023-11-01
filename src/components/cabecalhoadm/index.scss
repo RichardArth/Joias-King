@@ -10,15 +10,12 @@
 
     header {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        width: 100%;
 
-        .cba-esquerda,
-        .cba-meio,
-        .cba-direita {
-            width: 33.33%;
+
+        
+        .cba-meio {
             max-width: 100%;
             display: flex;
             justify-content: center;
@@ -27,10 +24,7 @@
 
         .cba-meio img {
             width: 60%;
-        }
-
-        .cba-direita img {
-            width: 25%;
+            margin-left: 20%;
         }
     }
 

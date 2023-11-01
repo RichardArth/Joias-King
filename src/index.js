@@ -27,6 +27,7 @@ import Produtos from './pages/produtos';
 import Privacidade from './pages/privacidade';
 import Centralatendimento from './pages/central-atendimento';
 import Trocas from './pages/trocas-devoluçoes';
+import Grafico from './pages/graficos';
 
 import { register } from 'swiper/element/bundle'
 import 'swiper/scss';
@@ -64,6 +65,7 @@ root.render(
        <Route path='/politica-privacidade' element={< Privacidade/>} />
        <Route path='/central-atendimento' element={< Centralatendimento/>} />
        <Route path='/trocas-devoluçao' element={< Trocas/>} />
+       <Route path='/graficos' element={<Grafico/>} />
        </Routes>
     </BrowserRouter>
   </React.StrictMode>

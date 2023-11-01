@@ -1,5 +1,6 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
+import CabecalhoAdm from '../../components/cabecalhoadm';
 
 
 function LandingAdm() {
@@ -26,15 +27,16 @@ function LandingAdm() {
                     <li><Link to='/produtos'>PRODUTOS</Link></li>
                     <li>MELHORES AVALIAÇÕES</li>
                     <li>OS MAIS COMPRADOS</li>
-                    <li><Link to='/graficos'>GRÁFICO DE VENDAS</Link></li>
+                    <li>GRÁFICO DE VENDAS</li>
                     <li>PEDIDOS EM ANDAMENTO</li>
                     <li>PEDIDOS ENVIADOS</li>
                 </nav>
             </div>
             
             <div className='s1adm-parte-principal'>
+                
                 <header>
-                    <img src='./assets/images/logobranca.png'></img>
+                    <img  src='./assets/images/logobranca.png'></img>
                     <hr></hr>
                 </header>
 
@@ -44,23 +46,7 @@ function LandingAdm() {
                     </h1>
                 </div>
 
-                <main className='s1p-produtos'>
-                    <div className='ficha-produto'>
-                        <div className='imagem-produto'>
-                            <img src='./assets/images/colar-01.png'></img>
-                        </div>
-
-                        <div className='descricao-produto'>
-                            <h4>Mix de Colares de Prata Corações e Ponto de Luz</h4>
-                            <h5 style={{color: '#B88B1B'}}>R$129,98</h5>
-                        </div>
-
-                        <div className='personalizar-produto'>
-                            <img src='./assets/images/deletar-produto.png'></img>
-                            <img src='./assets/images/alterar-produto.png'></img>
-                        </div>
-                    </div>
-                </main>
+           
             </div>
         </section>
     )

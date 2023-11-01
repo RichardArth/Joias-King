@@ -1,7 +1,4 @@
-.atendimento{
-    display: flex;
-    flex-direction: column;
-}
+
 
 .atendimento h1{
     display: flex;
@@ -29,4 +26,107 @@
     border-bottom: 1px solid #000000;
     width: 80%;
     cursor: pointer;
+    
+}
+
+.atendimento-s1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 25%;
+}
+
+
+.atendimento-s1-perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid black;
+    width: 20%;
+    height: 40vh;
+    padding: 10px;
+    margin-top: 130px;
+    
+}
+
+.atendimento-s1-perfil img{
+        height: auto;
+        width: 75%;
+        margin-bottom: 50px;
+}
+
+.atendimento-s1-perfil p{
+    font: 20px 'Allerta';
+    
+}
+
+
+
+
+
+.atendimento-s2-perfil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid black;
+    width: 20%;
+    height: 40vh;
+    padding: 10px;
+    margin-top: 130px;
+}
+
+.atendimento-s2-perfil img{
+        height: auto;
+        width: 100%;
+        margin-bottom: 50px;
+}
+
+.atendimento-s2-perfil p{
+    font: 20px 'Allerta';
+    
+}
+
+
+
+
+.atendimento-s2{
+    background-color: #DBDBDB;
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6%;
+}
+
+.atendimento-s2 button{
+    margin-top: 20px;
+    height: 25%;
+    width: 15%;
+    background-color: #CF6300;
+    text-decoration: none;
+    border: none;
+    color: #FFFFFF;
+    font: 12px'inter';
+    text-align: center; 
+}
+
+.atendimento-s3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 20px;
+}
+
+.atendimento-s3 hr{
+        
 }

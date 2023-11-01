@@ -36,13 +36,13 @@ function Rodape() {
                 <h2>SERVIÇOS</h2>
 
                 <nav>
-                    <Link><h5>Central de Atendimento</h5></Link>
+                    <Link to='/central-atendimento'><h5>Central de Atendimento</h5></Link>
                     <Link to='/sobrenos'><h5>Sobre Nós</h5></Link>
                     <Link><h5>Entrega</h5></Link>
                     <Link to='/cadastro'><h5>Cadastro</h5></Link>
-                    <Link><h5>Política de Privacidade</h5></Link>
+                    <Link to='/politica-privacidade'><h5>Política de Privacidade</h5></Link>
                     <Link to='/cuidado-joias'><h5>Cuidado com as suas jóias</h5></Link>
-                    <Link><h5>Trocas e Devoluções</h5></Link>
+                    <Link to='/trocas-devoluçao'><h5>Trocas e Devoluções</h5></Link>
                 </nav>
             </div>
 
