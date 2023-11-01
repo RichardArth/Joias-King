@@ -17,7 +17,8 @@
     cursor: pointer;
   }
 
-  .cadastro-0{
+  .cadastro-0 {
+    position: relative;
     background-color: rgb(255, 255, 255);
     display: flex;
     flex-direction: column;
@@ -28,6 +29,47 @@
     border-radius: 35px;
     margin-top: 220px;
     margin-left: 10%;
+    animation: iniciar 4s ease-out;
+    pointer-events: all;
+
+  }
+
+  .cadastro-0::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 35px;
+    animation: lightPulse 2s linear infinite;
+  }
+
+  @keyframes lightPulse {
+    0% {
+      box-shadow: 0 0 20px rgb(255, 255, 255);
+    }
+    50% {
+      box-shadow: 0 0 40px rgb(255, 255, 255);
+    }
+    100% {
+      box-shadow: 0 0 20px  rgb(255, 255, 255);
+    }
+  }
+
+
+  @keyframes iniciar {
+    0% {
+      top: -20%;
+      opacity: 0;
+      pointer-events: none;
+    }
+    100% {
+      top: 0.1%;
+      opacity: 100%;
+      pointer-events: all;
+    }
   }
   
   .cadastro-s1{

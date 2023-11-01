@@ -29,6 +29,24 @@
   border-radius: 35px;
   margin-top: 200px;
   margin-left: 10%;
+  animation: iniciar 4s ease-out;
+  pointer-events: all;
+  position: relative;
+
+
+  @keyframes iniciar{
+    0%{
+        top: -20%;
+        opacity: 0;
+        pointer-events: none;
+  }
+
+    100%{
+        top: 0.1%;
+        opacity: 100%;
+        pointer-events: all;
+    }
+  }
 }
 
 .login-s1{
