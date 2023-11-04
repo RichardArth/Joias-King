@@ -9,25 +9,25 @@ function Index() {
 
   const[email, setEmail] = useState('');
   const[senha, setSenha] = useState('');
-  const[erro,setErro] = useState('');
+  const[erro, setErro] = useState('');
   const[carregando, setCarregando] = useState(false);
 
-  let navigate = useNavigate();
-  let ref = useRef();
+  const navigate = useNavigate();
+  const ref = useRef();
 
   async function Logar() {
     ref.current.continuousStart();
     setCarregando(true);
 
     try {
-      let r = await axios.post(API_URL + '/login', {
+      let r = await axios.post(API_URL + '/loginadm', {
         email: email,
         senha: senha
       });
 
       setTimeout(() => {
         navigate('/home-adm');
-      }, 4000)
+      }, 3000)
 
     }
 
@@ -35,7 +35,7 @@ function Index() {
       ref.current.complete();
       setCarregando(false)
 
-      if(err.reponse.status === 401){
+      if(err.response.status === 401){
         setErro(err.response.data.erro)
       }
     }
@@ -64,7 +64,7 @@ function Index() {
             <input type="password" placeholder="digite sua senha" value={senha} onChange={e => setSenha(e.target.value)} required/>
 
             <button onClick={Logar} disabled={carregando} className='bt-confirmar'>CONFIRMAR</button>
-            
+            <h5 style={{color: '#DE0F0F'}}>{erro}</h5>
           </div>
         </div>
       </section>

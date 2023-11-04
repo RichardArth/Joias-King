@@ -70,6 +70,16 @@
  
   flex-direction: column;
   margin-top: 10px;
+
+  a:-webkit-any-link {
+    text-align: center;
+    margin-top: 10px;
+    color:#0038FF
+  }
+
+  h4 {
+    text-align: center;
+  }
 }
 
 .login-s2 h4{
@@ -119,6 +129,7 @@
   font-size: 20px;
   font-family: Allerta;
   border: none;
+  margin-bottom: 30px;
   
 }
 

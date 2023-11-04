@@ -1,31 +1,42 @@
 import { Link } from 'react-router-dom';
 import './App.scss';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { API_URL } from '../../constants';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import LoadingBar from 'react-top-loading-bar'
 
 function App() {
 
   const[email, setEmail] = useState('');
   const[senha, setSenha] = useState('');
   const[erro,setErro] = useState('');
+  const[carregando, setCarregando] = useState(false);
 
   let navigate = useNavigate();
+  let ref = useRef();
 
   async function Logar() {
+    ref.current.continuousStart();
+    setCarregando(true);
+
     try {
       let r = await axios.post(API_URL + '/login', {
         email: email,
         senha: senha
-      })
-      
-      navigate('/home-adm')
+      });
+
+      setTimeout(() => {
+        navigate('/');
+      }, 4000)
 
     }
-    
+
     catch (err){
-      if(err.reponse.status === 401){
+      ref.current.complete();
+      setCarregando(false)
+
+      if(err.response.status === 401){
         setErro(err.response.data.erro)
       }
     }
@@ -33,7 +44,7 @@ function App() {
 
   return (
     <div className="App">
-
+      <LoadingBar color='#B88B1B' ref={ref} />
       <section className='login01'>
         <div className='cabecalho-login'>
        <Link to='/'><img src='./assets/images/logopreta.png'/></Link>
@@ -45,13 +56,13 @@ function App() {
           </div>
           <div className='login-s2'>
             <h4>EMAIL</h4>
-            <input type="text" placeholder="digite seu e-mail"/>
+            <input type="text" placeholder="digite seu e-mail"value={email} onChange={e => setEmail(e.target.value)}/>
 
             <h4>SENHA</h4>
-            <input type="password" placeholder="digite sua senha"/>
+            <input type="password" placeholder="****" value={senha} onChange={e => setSenha(e.target.value)}/>
 
-            <button className='bt-log'>LOGIN</button>
-            {erro}
+            <button onClick={Logar} disabled={carregando} className='bt-log'>LOGIN</button>
+            <h4 style={{color: '#DE0F0F'}}>{erro}</h4>
 
             <h4 className='s3-login'>OU</h4>
 

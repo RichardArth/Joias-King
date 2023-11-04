@@ -14,7 +14,7 @@ import Categorias from './pages/categorias/index';
 import CadastroProduto from './pages/cadastro-produto';
 import CuidadoJoias from './pages/cuidado com as joias';
 import LandingPage from './pages/landind page';
-import LandingAdm from './pages/landing-page-adm';
+import LandingAdm from './pages/home-adm';
 import Carrinho from './pages/carrinho';
 import Avaliacoes from './pages/central-avaliacoes';
 import Aliancas from './pages/aliancas';
@@ -45,27 +45,27 @@ root.render(
       <Routes>
        <Route path='/' element={<LandingPage />} />
        <Route path='/login' element={<App />}  />
-       <Route path='/cadastro' element={<Cadastro/>} />
-       <Route path='/AlterarSenha' element={<Alterarsenha/>} />
-       <Route path='/adm-login' element={<Loginadm/>} />
-       <Route path='/sobrenos' element={<Sobrenos/>} />
-       <Route path='/categorias' element={<Categorias/>} />
+       <Route path='/cadastro' element={<Cadastro />} />
+       <Route path='/AlterarSenha' element={<Alterarsenha />} />
+       <Route path='/adm-login' element={<Loginadm />} />
+       <Route path='/sobrenos' element={<Sobrenos />} />
+       <Route path='/categorias' element={<Categorias />} />
        <Route path='/cd-produto' element={<CadastroProduto />} />
        <Route path='/cuidado-joias' element={<CuidadoJoias />} />
        <Route path='/home-adm'element={<LandingAdm />} />
-       <Route path='/carrinho' element={<Carrinho/>} />
-       <Route path='/central-avaliaçoes' element={<Avaliacoes/>} />
-       <Route path='/aliancas' element={<Aliancas/>}/>
-       <Route path='/aneis' element={<Aneis/>}/>
-       <Route path='/brincos' element={<Brincos/>}/>
-       <Route path='/correntes' element={<Correntes/>}/>
-       <Route path='/namorados' element={<Namorados/>}/>
-       <Route path='/pet' element={<Pet/>}/>
-       <Route path='/produtos' element={<Produtos/>}/>
-       <Route path='/politica-privacidade' element={< Privacidade/>} />
-       <Route path='/central-atendimento' element={< Centralatendimento/>} />
-       <Route path='/trocas-devoluçao' element={< Trocas/>} />
-       <Route path='/graficos' element={<Grafico/>} />
+       <Route path='/carrinho' element={<Carrinho />} />
+       <Route path='/central-avaliaçoes' element={<Avaliacoes />} />
+       <Route path='/aliancas' element={<Aliancas />}/>
+       <Route path='/aneis' element={<Aneis />}/>
+       <Route path='/brincos' element={<Brincos />}/>
+       <Route path='/correntes' element={<Correntes />}/>
+       <Route path='/namorados' element={<Namorados />}/>
+       <Route path='/pet' element={<Pet />}/>
+       <Route path='/produtos' element={<Produtos />}/>
+       <Route path='/politica-privacidade' element={<Privacidade />} />
+       <Route path='/central-atendimento' element={<Centralatendimento />} />
+       <Route path='/trocas-devoluçao' element={<Trocas />} />
+       <Route path='/graficos' element={<Grafico />} />
        </Routes>
     </BrowserRouter>
   </React.StrictMode>

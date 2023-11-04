@@ -51,7 +51,7 @@ function Trocas() {
           
 
            
-        
+        <Rodape /> 
         </div>
     )
 }
