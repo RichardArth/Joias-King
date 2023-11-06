@@ -30,6 +30,7 @@ function Index(){
   }
 
 
+
 return(
     <div className='index'>
         <section className='cadastro01'>
@@ -67,8 +68,6 @@ return(
           </div>
           <button onClick={Cadastrar} className='jump-button'>CADASTRAR</button>
         </div>
-
-            
 
         </section>
     </div>
