@@ -27,9 +27,9 @@ function LandingPage() {
         {
             id: '3',
             imageLeft: './assets/images/aspas-esquerda.png',
-            text: 'Joia impecável, recomendo muito!',
+            text: 'Anel no dedo, pica no rego',
             imageRight: './assets/images/aspas-direita.png', 
-            author: 'Pedro Paulo D. A. Oca',
+            author: 'Cacique O Pensador',
           },
 
 

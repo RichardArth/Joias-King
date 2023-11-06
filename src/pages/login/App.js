@@ -28,7 +28,7 @@ function App() {
 
       setTimeout(() => {
         navigate('/');
-      }, 4000)
+      }, 3000)
 
     }
 
