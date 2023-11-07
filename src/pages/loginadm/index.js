@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../../constants';
 import axios from 'axios';
 import LoadingBar from 'react-top-loading-bar';
+import storage from 'local-storage';
+import { useEffect } from 'react';
 
 function Index() {
 
@@ -15,15 +17,22 @@ function Index() {
   const navigate = useNavigate();
   const ref = useRef();
 
+  useEffect(() => {
+    if(storage('adm-login')) {
+      navigate('/home-adm')
+    }
+  }, [])
+
   async function Logar() {
     ref.current.continuousStart();
     setCarregando(true);
 
     try {
-      let r = await axios.post(API_URL + '/loginadm', {
+      const r = await axios.post(API_URL + '/loginadm', {
         email: email,
         senha: senha
       });
+      storage('adm-login', r);
 
       setTimeout(() => {
         navigate('/home-adm');

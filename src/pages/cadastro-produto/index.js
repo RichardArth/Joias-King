@@ -3,6 +3,11 @@ import './index.scss';
 import { useState } from 'react';
 import { API_URL } from '../../constants.js';
 import axios from 'axios';
+import { Form } from 'react-router-dom';
+import storage from 'local-storage';
+
+import { toast } from 'react-toastify';
+
 
 function escolherimagem() {
   document.getElementById('img-produto').click();
@@ -15,61 +20,53 @@ function mostrarimg(){
 function CadastroProduto() {
 
   const[nomeproduto, setNomeProduto] = useState('');
-  
-  const tipos = [
-    {
-      id: '1',
-      produto: 'Aliança'
-    },
-
-    {
-      id: '2',
-      produto: 'Anel'
-    },
-
-    {
-      id: 3,
-      produto: 'Colar/Corrente'
-    },
-
-    {
-      id: '4',
-      produto: 'Pet'
-    },
-
-    {
-      id: '5',
-      produto: 'Namorados'
-    },
-
-    {
-      id: '6',
-      produto: 'Brinco'
-    }
-  ];
-
   const[preco, setPreco] = useState('');
+  const[tipo, setTipo] = useState('')
   const[detalhes, setDetalhes] = useState('');
   const[estoque, setEstoque] = useState(0);
   const[imagem, setImagem] = useState('');
   const[codigo, setCodigo] = useState('');
+  const[disponivel, setDisponivel] = useState(false)
 
   async function CadastrarProduto() {
-    const produto = {
-      nome: nomeproduto,
-      tipo: tipos.id,
-      preco: preco,
-      detalhes: detalhes,
-      estoque: estoque,
-      codigo: codigo
+    try {
+      const usuario = storage('usuario-logado').id;
+
+      const r = await axios.post(API_URL + '/produto', {
+        nome: nomeproduto,
+        tipo:tipo,
+        detalhes:detalhes,
+        estoque:estoque,
+        codigo:codigo
+      })
+      toast.dark('👍 Produto Cadastrado com sucesso!')
+      return r.data
     }
 
-    let url = API_URL + '/produto'
-    let r = await axios.post(url, produto)
+    catch(err) {
+      toast.error(err.response.data.erro)
+    }
+  }
+
+  async function EnviarImagem(id, imagem) {
+
+    const formData = new FormData();
+    formData.append('imagem', imagem);
+
+
+    const r = await axios.put(API_URL + `/produto/${id}`, formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      },
+    })
+
+    return r.status;
   }
 
   return (
     <div className="pagina-cadastro-produto">
+      <ToastContainer />
+
       <div className='pc-cabecalho'>
         <CabecalhoAdm />
       </div>
@@ -89,12 +86,12 @@ function CadastroProduto() {
             <h5>CATEGORIA</h5>
             <select>
               <option>Coloque a categoria</option>
-              <option id='1'>Aliança</option>
-              <option id='4'>Pet</option>
-              <option id='3'>Colar/Corrente</option>
-              <option id='2'>Anel</option>
-              <option id='6'>Brinco</option>
-              <option id='5'>Namorados</option>
+              <option>Aliança</option>
+              <option>Pet</option>
+              <option>Colar/Corrente</option>
+              <option>Anel</option>
+              <option>Brinco</option>
+              <option>Namorados</option>
             </select>
           </div>
 
@@ -105,7 +102,7 @@ function CadastroProduto() {
 
           <div>
             <h5>DETALHES</h5>
-            <input type='text' value={detalhes} onChange={e => setDetalhes(e.target.value)}></input>
+            <textarea type='text' value={detalhes} onChange={e => setDetalhes(e.target.value)}></textarea>
           </div>
 
           <div>
@@ -116,6 +113,8 @@ function CadastroProduto() {
           <div>
             <h5>CÓDIGO DO PRODUTO</h5>
             <input type='text' value={codigo} onChange={e => setCodigo(e.target.value)}></input>
+            <h6>DISPONÍVEL</h6>
+            <input type='checkbox' checked={disponivel} onChange={e => setDisponivel(e.target.checked)}></input>
           </div>
         </div>
 

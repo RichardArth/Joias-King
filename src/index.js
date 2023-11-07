@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
@@ -43,6 +46,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
+        <ToastContainer />
        <Route path='/' element={<LandingPage />} />
        <Route path='/login' element={<App />}  />
        <Route path='/cadastro' element={<Cadastro />} />

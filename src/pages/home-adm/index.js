@@ -1,14 +1,30 @@
 import './index.scss';
 import { Link } from 'react-router-dom';
-
+import storage from 'local-storage';
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function LandingAdm() {
+
+    const nav = useNavigate();
+
+    function SairPagina() {
+        storage.remove('adm-login')
+        nav('/adm-login')
+    }
+
+    useEffect(() => {
+        if(!storage('adm-login')) {
+            nav('/adm-login')
+        }
+    }, [])
+
     return(
         <section className='secao-01-adm'>
-            <div className='s1adm-esquerda'>
+            <div className='menu-adm'>
                 <header>
                     <div>
-                        <img src='./assets/images/usuario.png'></img>
+                        <span>R</span>
                         <h4>richardarthur@gmail.com</h4>
                     </div>
                     <hr></hr>
@@ -30,6 +46,8 @@ function LandingAdm() {
                     <li>PEDIDOS EM ANDAMENTO</li>
                     <li>PEDIDOS ENVIADOS</li>
                 </nav>
+
+                <button onClick={SairPagina} className='sair-pagina'><img src='./assets/images/sair-pagina.png'></img>Sair</button>
             </div>
             
             <div className='s1adm-parte-principal'>
@@ -40,7 +58,7 @@ function LandingAdm() {
 
                 <div className='s1admp-titulo'>
                     <h1>
-                        SEJA BEM-VINDO RICHARD
+                        SEJA BEM-VINDO
                     </h1>
                 </div>
 
