@@ -65,7 +65,6 @@ function CadastroProduto() {
 
   return (
     <div className="pagina-cadastro-produto">
-      <ToastContainer />
 
       <div className='pc-cabecalho'>
         <CabecalhoAdm />

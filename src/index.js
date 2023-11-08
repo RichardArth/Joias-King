@@ -45,8 +45,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <Routes>
-        <ToastContainer />
+    <ToastContainer />
+      <Routes> 
        <Route path='/' element={<LandingPage />} />
        <Route path='/login' element={<App />}  />
        <Route path='/cadastro' element={<Cadastro />} />

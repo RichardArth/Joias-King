@@ -56,10 +56,10 @@ function App() {
           </div>
           <div className='login-s2'>
             <h4>EMAIL</h4>
-            <input type="text" placeholder="digite seu e-mail"value={email} onChange={e => setEmail(e.target.value)}/>
+            <input type="text" placeholder="Digite seu e-mail"value={email} onChange={e => setEmail(e.target.value)}/>
 
             <h4>SENHA</h4>
-            <input type="password" placeholder="****" value={senha} onChange={e => setSenha(e.target.value)}/>
+            <input type="password" placeholder="Digite sua senha" value={senha} onChange={e => setSenha(e.target.value)}/>
 
             <button onClick={Logar} disabled={carregando} className='bt-log'>LOGIN</button>
             <h4 style={{color: '#DE0F0F'}}>{erro}</h4>

@@ -47,10 +47,10 @@ function Index() {
           </div>
           <div className='alterar-s2'>
             <h4>SENHA NOVA</h4>
-            <input type="password" placeholder="digite sua senha" value={novasenha} onChange={e => setNovaSenha(e.target.value)} required/>
+            <input type="password" placeholder="Digite sua senha" value={novasenha} onChange={e => setNovaSenha(e.target.value)} required/>
 
             <h4>REPETIR SENHA</h4>
-            <input type="password" placeholder="digite sua nova senha" value={repetirsenha} onChange={e => setRepetirSenha(e.target.value)} required/>
+            <input type="password" placeholder="Digite sua nova senha" value={repetirsenha} onChange={e => setRepetirSenha(e.target.value)} required/>
 
             <button type='submit' onClick={Alterar} className='bt-confirmar'>CONFIRMAR</button>
 

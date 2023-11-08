@@ -45,13 +45,13 @@ return(
           </div>
           <div className='cadastro-s2'>
             <h4>EMAIL</h4>
-            <input type="text" placeholder="digite seu e-mail" value={email} onChange={e => setEmail(e.target.value)}/>
+            <input type="text" placeholder="Digite seu e-mail" value={email} onChange={e => setEmail(e.target.value)}/>
 
             <h4>SENHA</h4>
-            <input type="password" placeholder="digite sua senha" value={senha} onChange={e => setSenha(e.target.value)}/>
+            <input type="password" placeholder="Digite sua senha" value={senha} onChange={e => setSenha(e.target.value)}/>
 
             <h4>TELEFONE</h4>
-            <input type="text" placeholder="digite seu telefone" value={telefone} onChange={e => setTelefone(e.target.value)}/>
+            <input type="text" placeholder="Digite seu telefone" value={telefone} onChange={e => setTelefone(e.target.value)}/>
 
             <h4>NOME</h4>
             <input type="text" placeholder="Digite seu nome" value={nome} onChange={e => setNome(e.target.value)}/>
