@@ -47,6 +47,26 @@
       pointer-events: all;
     }
   }
+
+  .senha-container {
+    position: relative;
+  }
+  
+  .icon-eye {
+    position: absolute;
+    top: 34%;
+    right: 22px;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+  
+  .icon-eye.fa-eye {
+    color: #a5a5a5;
+  }
+  
+  .icon-eye.fa-eye-slash {
+    color: #cf6300;
+  }
   
   .cadastro-s1{
     display: flex;

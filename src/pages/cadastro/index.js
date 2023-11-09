@@ -3,8 +3,11 @@ import './index.scss';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { API_URL } from '../../constants.js';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 function Index(){
+  const [senhaVisivel, setSenhaVisivel] = useState(false);
+
 
   const[email, setEmail] = useState('');
   const[senha, setSenha] = useState('');
@@ -13,6 +16,10 @@ function Index(){
   const[sobrenome, setSobrenome] = useState('');
   const[nascimento, setNascimento] = useState('');
   const[cpf, setCpf] = useState('');
+
+  const toggleSenhaVisivel = () => {
+    setSenhaVisivel(!senhaVisivel);
+  };
 
   async function Cadastrar() {
     let cliente = {
@@ -48,8 +55,22 @@ return(
             <input type="text" placeholder="Digite seu e-mail" value={email} onChange={e => setEmail(e.target.value)}/>
 
             <h4>SENHA</h4>
-            <input type="password" placeholder="Digite sua senha" value={senha} onChange={e => setSenha(e.target.value)}/>
+                <div className="senha-container">
+                  <input
+                    type={senhaVisivel ? 'text' : 'password'}
+                    placeholder="Digite sua senha"
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
+                  />
+                  {senhaVisivel ? (
+                    <FaEyeSlash className="icon-eye" onClick={toggleSenhaVisivel} />
+                  ) : (
+                    <FaEye className="icon-eye" onClick={toggleSenhaVisivel} />
+                  )}
+          
 
+                </div>
+                
             <h4>TELEFONE</h4>
             <input type="text" placeholder="Digite seu telefone" value={telefone} onChange={e => setTelefone(e.target.value)}/>
 

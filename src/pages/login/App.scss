@@ -65,6 +65,26 @@
   cursor: pointer;
 }
 
+.senha-container {
+  position: relative;
+}
+
+.icon-eye {
+  position: absolute;
+  top: 36%;
+  right: 30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.icon-eye.fa-eye {
+  color: #a5a5a5;
+}
+
+.icon-eye.fa-eye-slash {
+  color: #cf6300;
+}
+
 .login-s2{
   display: flex;
   

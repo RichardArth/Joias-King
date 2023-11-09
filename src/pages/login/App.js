@@ -5,13 +5,20 @@ import { API_URL } from '../../constants';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import LoadingBar from 'react-top-loading-bar'
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
 
 function App() {
+  const [senhaVisivel, setSenhaVisivel] = useState(false);
 
   const[email, setEmail] = useState('');
   const[senha, setSenha] = useState('');
   const[erro,setErro] = useState('');
   const[carregando, setCarregando] = useState(false);
+
+  const toggleSenhaVisivel = () => {
+    setSenhaVisivel(!senhaVisivel);
+  };
 
   let navigate = useNavigate();
   let ref = useRef();
@@ -59,7 +66,21 @@ function App() {
             <input type="text" placeholder="Digite seu e-mail"value={email} onChange={e => setEmail(e.target.value)}/>
 
             <h4>SENHA</h4>
-            <input type="password" placeholder="Digite sua senha" value={senha} onChange={e => setSenha(e.target.value)}/>
+                <div className="senha-container">
+                  <input
+                    type={senhaVisivel ? 'text' : 'password'}
+                    placeholder="Digite sua senha"
+                    value={senha}
+                    onChange={(e) => setSenha(e.target.value)}
+                  />
+                  {senhaVisivel ? (
+                    <FaEyeSlash className="icon-eye" onClick={toggleSenhaVisivel} />
+                  ) : (
+                    <FaEye className="icon-eye" onClick={toggleSenhaVisivel} />
+                  )}
+          
+
+                </div>
 
             <button onClick={Logar} disabled={carregando} className='bt-log'>LOGIN</button>
             <h4 style={{color: '#DE0F0F'}}>{erro}</h4>
