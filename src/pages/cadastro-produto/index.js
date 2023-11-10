@@ -9,13 +9,6 @@ import storage from 'local-storage';
 import { toast } from 'react-toastify';
 
 
-function escolherimagem() {
-  document.getElementById('img-produto').click();
-}
-
-function mostrarimg(){
-
-}
 
 function CadastroProduto() {
 
@@ -24,22 +17,35 @@ function CadastroProduto() {
   const[tipo, setTipo] = useState('')
   const[detalhes, setDetalhes] = useState('');
   const[estoque, setEstoque] = useState(0);
-  const[imagem, setImagem] = useState('');
+  const[imagem, setImagem] = useState();
   const[codigo, setCodigo] = useState('');
-  const[disponivel, setDisponivel] = useState(false)
+
+
+  function escolherimagem() {
+    document.getElementById('img-produto').click();
+  }
+
+
+  function mostrarimg(){
+    return URL.createObjectURL(imagem)
+  }
+
 
   async function CadastrarProduto() {
     try {
       const usuario = storage('usuario-logado').id;
 
-      const r = await axios.post(API_URL + '/produto', {
+      const produto = await axios.post(API_URL + '/produto', {
         nome: nomeproduto,
         tipo:tipo,
         detalhes:detalhes,
         estoque:estoque,
         codigo:codigo
       })
-      toast.dark('👍 Produto Cadastrado com sucesso!')
+
+      const r = await EnviarImagem(produto.id, imagem);
+
+      toast.success('👍 Produto Cadastrado com sucesso!')
       return r.data
     }
 
@@ -112,21 +118,24 @@ function CadastroProduto() {
           <div>
             <h5>CÓDIGO DO PRODUTO</h5>
             <input type='text' value={codigo} onChange={e => setCodigo(e.target.value)}></input>
-            <h6>DISPONÍVEL</h6>
-            <input type='checkbox' checked={disponivel} onChange={e => setDisponivel(e.target.checked)}></input>
           </div>
         </div>
+          
+          <div className='pc-colocar-imagem'>
+            <div className='escolher-imagem' onClick={escolherimagem}>
 
-        <div className='pc-imagem'>
-          <div className='img-produto-adm' onClick={escolherimagem}>
-            <h1>+</h1>
-            <img src={mostrarimg()} alt='' />
-            <input type='file' id='img-produto' value={imagem} onChange={e => setImagem(e.target.files[3])}/>
+              {!imagem && 
+                  <img style={{width: 80}} src='./assets/images/upload.png'></img>}
+              
+              {imagem && 
+                <img className='imagem-selecionada' src={mostrarimg()} alt=''/>}
+
+                <input type='file' id='img-produto' onChange={e => setImagem(e.target.files[0])} required />
+            </div>
+
+            <h5>Adicionar Imagem</h5>
+            <h6>Apenas 1 imagem</h6>
           </div>
-
-          <h5>Adicionar Imagens</h5>
-          <h6>Até 3 imagens</h6>
-        </div>
       </main>
 
       <div className="pc-salvar-produto">
