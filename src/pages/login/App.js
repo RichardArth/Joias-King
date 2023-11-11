@@ -54,18 +54,18 @@ function App() {
       <LoadingBar color='#B88B1B' ref={ref} />
       <section className='login01'>
         <div className='cabecalho-login'>
-       <Link to='/'><img src='./assets/images/logopreta.png'/></Link>
+          <Link to='/'><img src='./assets/images/logopreta.png'/></Link>
         </div>
         <div className='login'>
           <div className='login-s1'>
-          <h2>FAÇA SEU LOGIN</h2>
-          <img src='./assets/images/usuario.png'/>
+            <h2>FAÇA SEU LOGIN</h2>
+            <img src='./assets/images/usuario.png'/>
           </div>
-          <div className='login-s2'>
-            <h4>EMAIL</h4>
-            <input type="text" placeholder="Digite seu e-mail"value={email} onChange={e => setEmail(e.target.value)}/>
+            <div className='login-s2'>
+              <h4>EMAIL</h4>
+              <input type="text" placeholder="Digite seu e-mail"value={email} onChange={e => setEmail(e.target.value)}/>
 
-            <h4>SENHA</h4>
+              <h4>SENHA</h4>
                 <div className="senha-container">
                   <input
                     type={senhaVisivel ? 'text' : 'password'}
