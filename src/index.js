@@ -31,6 +31,7 @@ import Privacidade from './pages/privacidade';
 import Centralatendimento from './pages/central-atendimento';
 import Trocas from './pages/trocas-devoluçoes';
 import Grafico from './pages/graficos';
+import MeuPerfil from './pages/meu-perfil'
 
 import { register } from 'swiper/element/bundle'
 import 'swiper/scss';
@@ -70,6 +71,7 @@ root.render(
        <Route path='/central-atendimento' element={<Centralatendimento />} />
        <Route path='/trocas-devoluçao' element={<Trocas />} />
        <Route path='/graficos' element={<Grafico />} />
+       <Route path='/meu-perfil' element={<MeuPerfil />} />
        </Routes>
     </BrowserRouter>
   </React.StrictMode>

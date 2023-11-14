@@ -18,7 +18,7 @@ function CadastroProduto() {
   const[estoque, setEstoque] = useState(0);
   const[imagem, setImagem] = useState();
   const[codigo, setCodigo] = useState('');
-  const[erro, setErro] = useState('')
+  const[erro, setErro] = useState('');
 
 
   function escolherimagem() {
@@ -106,11 +106,8 @@ function CadastroProduto() {
       toast.success('👍 Produto alterado com sucesso!')
       return r.data
     }
-
-    catch (err) {
-      if(err.response.status === 401){
-        setErro(err.response.data.erro)
-      }
+    catch(err) {
+        toast.error(setErro(err.response.data.erro))
     }
   }
 

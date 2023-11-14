@@ -3,8 +3,14 @@ import { Link } from 'react-router-dom';
 import storage from 'local-storage';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import axios from 'axios';
+import { API_URL } from '../../constants.js';
+import { useState } from 'react';
 
 function LandingAdm() {
+
+    
+    const[produtos, setProdutos] = useState([]);
 
     const nav = useNavigate();
 
@@ -18,6 +24,22 @@ function LandingAdm() {
             nav('/adm-login')
         }
     }, [])
+
+    async function ListarProdutos() {
+        
+        const r = await axios.get(API_URL + '/produtos')
+        setProdutos(r.data)
+    }
+
+    async function ConsultarProduto(nome) {
+        
+        const r = await axios.get(API_URL + `/busca?nome=${nome}`)
+        return r.data
+    }
+
+    useEffect(() => {
+        ListarProdutos();
+    })
 
     return(
         <section className='secao-01-adm'>
@@ -39,7 +61,7 @@ function LandingAdm() {
                 <nav className='s1eadm-produtos'>
                     <h2>PRODUTOS</h2>
                     <li><Link to='/cd-produto'>ADICIONAR PRODUTO</Link></li>
-                    <li><Link to='/produtos'>PRODUTOS</Link></li>
+                    <li><Link to='/home-adm'>PRODUTOS</Link></li>
                     <li>MELHORES AVALIAÇÕES</li>
                     <li>OS MAIS COMPRADOS</li>
                     <li><Link to='/graficos'>GRÁFICO DE VENDAS</Link></li>
@@ -63,22 +85,24 @@ function LandingAdm() {
                 </div>
 
                 <main className='s1p-produtos'>
-                    <div className='ficha-produto'>
-                        <div className='imagem-produto'>
-                            <img src='./assets/images/colar-01.png'></img>
-                        </div>
+                        {produtos.map(e =>                    
+                            <div className='ficha-produto'>
+                                <div className='imagem-produto'>
+                                    {e.imagem}
+                                </div>
 
-                        <div className='descricao-produto'>
-                            <h4>Mix de Colares de Prata Corações e Ponto de Luz</h4>
-                            <h5 style={{color: '#B88B1B'}}>R$129,98</h5>
-                        </div>
+                                <div className='descricao-produto'>
+                                    <h4>{e.nome}</h4>
+                                    <h5 style={{color: '#B88B1B'}}>R${e.preco}</h5>
+                                </div>
 
-                        <div className='personalizar-produto'>
-                            <img src='./assets/images/deletar-produto.png'></img>
-                            <img src='./assets/images/alterar-produto.png'></img>
-                        </div>
-                    </div>
-                </main>
+                                <div className='personalizar-produto'>
+                                    <img src='./assets/images/deletar-produto.png'></img>
+                                    <img src='./assets/images/alterar-produto.png'></img>
+                                </div>
+                            </div>   
+                     )}
+                </main> 
             </div>
         </section>
     )

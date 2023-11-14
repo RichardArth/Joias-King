@@ -96,7 +96,7 @@
             margin-top: 40px;
             flex-direction: row;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
 
             .ficha-produto {
@@ -106,6 +106,7 @@
                 justify-content: center;
                 align-items: center;
                 gap:10px;
+                margin: 20px;
                 width: 25%;
                 
                 .imagem-produto {
