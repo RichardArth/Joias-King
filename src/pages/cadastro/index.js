@@ -1,12 +1,16 @@
 import { useState } from 'react';
 import './index.scss';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../constants.js';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import LoadingBar from 'react-top-loading-bar';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 
 function Index(){
   const [senhaVisivel, setSenhaVisivel] = useState(false);
+
+  const navigate = useNavigate();
 
 
   const[email, setEmail] = useState('');
@@ -16,30 +20,53 @@ function Index(){
   const[sobrenome, setSobrenome] = useState('');
   const[nascimento, setNascimento] = useState('');
   const[cpf, setCpf] = useState('');
+  const[erro, setErro] = useState('')
+  const[carregando, setCarregando] = useState(false);
 
   const toggleSenhaVisivel = () => {
     setSenhaVisivel(!senhaVisivel);
   };
 
   async function Cadastrar() {
-    let cliente = {
-      email: email,
-      senha: senha,
-      telefone: telefone,
-      nome: nome,
-      sobrenome: sobrenome,
-      nascimento: nascimento,
-      cpf: cpf
+    ref.current.continuousStart();
+    setCarregando(true);
+
+    const cliente = {
+      email:email,
+      senha:senha,
+      telefone:telefone,
+      nome:nome,
+      sobrenome:sobrenome,
+      nascimento:nascimento,
+      cpf:cpf
     }
 
-    let url = API_URL + '/cadastrar';
-    let r = await axios.post(url, cliente);
+    try {
+      const r = await axios.post(API_URL + '/cadastrar',cliente
+      );
+      storage('adm-login', r);
+
+      setTimeout(() => {
+        navigate('/home-adm');
+      }, 3000)
+
+    }
+
+    catch (err){
+      ref.current.complete();
+      setCarregando(false)
+
+      if(err.response.status === 401){
+        setErro(err.response.data.erro)
+      }
+    }
   }
 
 
 
 return(
     <div className='index'>
+        <LoadingBar/>
         <section className='cadastro01'>
         <div className='cabecalho-cadastro'>
           <Link to='/'><img src='./assets/images/logopreta.png'/></Link>

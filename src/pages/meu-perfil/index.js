@@ -46,7 +46,7 @@ function MeuPerfil() {
             <div className='mp-links'>
                 <div className='mp-links-usuario'>
                     <h1 style={{color: '#464646'}}>Olá,</h1>
-                    <h1 style={{color: '#000'}}>CACIQUE</h1>
+                    <h1 style={{color: '#000'}}>CLIENTE</h1>
                 </div>
 
                 <div id='pedidos-promocoes'>
@@ -74,26 +74,26 @@ function MeuPerfil() {
                     <div className='ic-esquerda'>
                         <div>
                             <h6>NOME</h6>
-                            <h4>Cacique</h4>
+                            <input></input>
                         </div>
 
                         <div>
                             <h6>SOBRENOME</h6>
-                            <h4>da Oca</h4>
+                            <input></input>
                         </div>
 
                         <div>
                             <h6>EMAIL</h6>
-                            <h4>cac#######.10@gmail.com</h4>
+                            <input></input>
                         </div>
 
                         <div>
                             <input type='text' placeholder='CONFIRME SEU EMAIL'></input>
                         </div>
 
-                        <input placeholder='Receber notificações sobre lançamentos e promoções' type='radio'></input>
+                        <input placeholder='Receber notificações sobre lançamentos e promoções' type='checked'></input>
 
-                        <button>Salvar</button>
+                        <button onClick={EnviarImagem}>Salvar</button>
                     </div>
 
                     <hr></hr>
@@ -109,7 +109,8 @@ function MeuPerfil() {
 
                                 <input id='img-produto' type='file' placeholder='Selecionar Imagem' onChange={e => setImagem(e.target.files[0])}></input>
                             </div>
-
+                            
+                            <h3>Selecionar Imagem</h3>
                             <h5>Tamanho do arquivo: no máximo 1 MB Extensão de arquivo: .JPEG, .PNG</h5>
                         </div>
                     </div>

@@ -4,8 +4,9 @@ import { useState } from 'react';
 import { API_URL } from '../../constants.js';
 import axios from 'axios';
 import storage from 'local-storage';
-
+import storage from 'local-storage';
 import { toast } from 'react-toastify';
+import storage from 'local-storage';
 
 
 function CadastroProduto() {
@@ -45,12 +46,12 @@ function CadastroProduto() {
       })
       
       const r = await EnviarImagem(produto.id, imagem);
-
+      toast.success('👍 Produto cadastrado com sucesso!')
       setID(produto.id);
     }
     
     else {
-      const produto = await axios.put(API_URL + '/produto', {
+      const produto = await axios.put(API_URL + `/produto/${id}`, {
         id: id,
         nome: nomeproduto,
         tipo:tipo,
@@ -58,7 +59,7 @@ function CadastroProduto() {
         estoque:estoque,
         codigo:codigo
       })
-      
+
       const r = await EnviarImagem(id, imagem);
       toast.success('👍 Produto Cadastrado com sucesso!')
       return r.data
@@ -67,7 +68,7 @@ function CadastroProduto() {
     }
 
     catch (err) {
-      if(err.response.status === 401){
+      if(err.response.status === 400){
         setErro(err.response.data.erro)
       }
     }

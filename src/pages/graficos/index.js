@@ -1,37 +1,23 @@
 import './index.scss';
-import { Link } from 'react-router-dom';
-import CabecalhoAdm from '../../components/cabecalhoadm';
+import MenuAdm from '../../components/menu-adm';
+
 
 
 function LandingAdm() {
+
+    const data = [
+        {brand: 'Aliança', porcentagem: 80},
+        {brand: 'Pet', porcentagem: 40},
+        {brand: 'Colar/Corrente', porcentagem: 20},
+        {brand: 'Anel', porcentagem: 90},
+        {brand: 'Brinco', porcentagem: 10},
+        {brand: 'Namorados', porcentagem: 60},
+    ];
+
+
     return(
         <section className='secao-01-adm'>
-            <div className='s1adm-esquerda'>
-                <header>
-                    <div>
-                        <img src='./assets/images/usuario.png'></img>
-                        <h4>richardarthur@gmail.com</h4>
-                    </div>
-                    <hr></hr>
-                </header>
-
-                <nav className='s1eadm-projetos'>
-                    <h2>PROJETOS</h2>
-                    <li><Link to='https://www.figma.com/file/OpQQXeuksFS66F1xjIsB7l/Joias-King?type=design&node-id=0-1&mode=design&t=DsyVs1E4AQED9YNt-0'>APARÊNCIA</Link></li>
-                    <li>PÁGINAS</li>
-                </nav>
-
-                <nav className='s1eadm-produtos'>
-                    <h2>PRODUTOS</h2>
-                    <li><Link to='/cd-produto'>ADICIONAR PRODUTO</Link></li>
-                    <li><Link to='/produtos'>PRODUTOS</Link></li>
-                    <li>MELHORES AVALIAÇÕES</li>
-                    <li>OS MAIS COMPRADOS</li>
-                    <li>GRÁFICO DE VENDAS</li>
-                    <li>PEDIDOS EM ANDAMENTO</li>
-                    <li>PEDIDOS ENVIADOS</li>
-                </nav>
-            </div>
+            <MenuAdm />
             
             <div className='s1adm-parte-principal'>
                 
@@ -44,6 +30,17 @@ function LandingAdm() {
                     <h1>
                         SEJA BEM-VINDO RICHARD
                     </h1>
+
+                    <div className='graficos2'>
+                    <ResponsiveContainer width="100%" height={500}>
+                    <BarChart data={data} margin={{ top: 60, right: 30, left: 20, bottom: 20}}>
+                    <CartesianGrid stroke="transparent"/>
+                    <XAxis dataKey="brand" tick={{ fontSize: 18 }}/>
+                    <YAxis tick={{ fontSize: 18 }}/>
+                    <Bar dataKey="porcentagem" fill="#7BC442" label={{ position: 'top', value: 'porcentagem', fontSize: 15, }} />
+                    </BarChart>
+                    </ResponsiveContainer>
+                    </div>
                 </div>
 
            
