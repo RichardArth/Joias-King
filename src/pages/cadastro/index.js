@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../constants.js';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import LoadingBar from 'react-top-loading-bar';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
+import storage from 'local-storage'
 
 function Index(){
   const [senhaVisivel, setSenhaVisivel] = useState(false);
@@ -28,7 +28,6 @@ function Index(){
   };
 
   async function Cadastrar() {
-    ref.current.continuousStart();
     setCarregando(true);
 
     const cliente = {
@@ -47,13 +46,12 @@ function Index(){
       storage('adm-login', r);
 
       setTimeout(() => {
-        navigate('/home-adm');
+        navigate('/');
       }, 3000)
 
     }
 
     catch (err){
-      ref.current.complete();
       setCarregando(false)
 
       if(err.response.status === 401){

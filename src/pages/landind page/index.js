@@ -15,7 +15,7 @@ function LandingPage() {
           imageLeft: './assets/images/aspas-esquerda.png',
           text: 'Parabenizo a toda a equipe e garanto a honestidade na prestação de serviços. Satisfação garantida!',
           imageRight: './assets/images/aspas-direita.png',
-          author: 'RogerinMilGraus_zs', 
+          author: 'Richard Arthur', 
         },
         {
           id: '2',
@@ -27,9 +27,9 @@ function LandingPage() {
         {
             id: '3',
             imageLeft: './assets/images/aspas-esquerda.png',
-            text: 'Anel no dedo, pica no rego',
+            text: 'Sou cliente N1 dessa magnífica loja. Simplesmente a melhor!!',
             imageRight: './assets/images/aspas-direita.png', 
-            author: 'Cacique O Pensador',
+            author: 'Pedro Carvalho',
           },
 
 
@@ -178,31 +178,37 @@ function LandingPage() {
                         <hr></hr>
                     </div>
 
-                    <Swiper 
-                    spaceBetween={10}
-                    slidesPerView={1}
-                    loop={true}
-                    loopFillGroupWithBlank={true}
-                    autoplay= {{
-                        delay: 2500
-                    }}
+                    <div className='container'>
+                        <div className='ligth-container'>
+                            <div className='ligth'>
+                            <Swiper
+                                className='carrossel' 
+                                spaceBetween={10}
+                                slidesPerView={1}
+                                loop={true}
+                                loopFillGroupWithBlank={true}
+                                autoplay= {{
+                                    delay: 3000
+                                }}
 
-                    >
-                        {reviews.map((review) => (
-                            <SwiperSlide key={review.id}>
-                            <div className='ca-avaliacoes'>
-                                <div>
-                                    <img src={review.imageLeft} alt="Aspas esquerda"></img>
-                                    <h4>{review.text}</h4>
-                                    <img src={review.imageRight} alt="Aspas direita"></img>
-                                </div>
+                                >
+                                {reviews.map((review) => (
+                                    <SwiperSlide className='slide-carrossel' key={review.id}>
+                                        <div className='ca-avaliacoes'>
+                                            <div>
+                                                <img src={review.imageLeft} alt="Aspas esquerda"></img>
+                                                <h4>{review.text}</h4>
+                                                <img src={review.imageRight} alt="Aspas direita"></img>
+                                            </div>
 
-                                <div><h3>{review.author}</h3></div>
+                                            <div><h3>{review.author}</h3></div>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
                             </div>
-                        </SwiperSlide>
-
-                        ))}
-                    </Swiper>   
+                        </div>
+                    </div>   
                 </div>
             </div>
 

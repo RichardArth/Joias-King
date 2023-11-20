@@ -92,6 +92,7 @@ function App() {
 
             <Link to='/AlterarSenha'>Esqueci minha senha</Link>
             <Link to='/cadastro'>Ainda não sou cliente</Link>
+            <Link to='/adm-login'>Sou Administrador</Link>
 
           </div>
         </div>

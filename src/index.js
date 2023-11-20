@@ -2,8 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.scss';
 
+import ScrollToTop from './components/scrollpaginas';
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import 'react-confirm-alert/src/react-confirm-alert.css'
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -26,12 +30,12 @@ import Brincos from './pages/brincos';
 import Correntes from './pages/correntes';
 import Namorados from './pages/namorados';
 import Pet from './pages/pet';
-import Produtos from './pages/produtos';
 import Privacidade from './pages/privacidade';
 import Centralatendimento from './pages/central-atendimento';
 import Trocas from './pages/trocas-devoluçoes';
 import Grafico from './pages/graficos';
-import MeuPerfil from './pages/meu-perfil'
+import MeuPerfil from './pages/meu-perfil';
+import DetalheProduto from './pages/detalhesproduto';
 
 import { register } from 'swiper/element/bundle'
 import 'swiper/scss';
@@ -47,6 +51,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
     <ToastContainer />
+    <ScrollToTop /> {ScrollToTop}
       <Routes> 
        <Route path='/' element={<LandingPage />} />
        <Route path='/login' element={<App />}  />
@@ -66,12 +71,14 @@ root.render(
        <Route path='/correntes' element={<Correntes />}/>
        <Route path='/namorados' element={<Namorados />}/>
        <Route path='/pet' element={<Pet />}/>
-       <Route path='/produtos' element={<Produtos />}/>
        <Route path='/politica-privacidade' element={<Privacidade />} />
        <Route path='/central-atendimento' element={<Centralatendimento />} />
        <Route path='/trocas-devoluçao' element={<Trocas />} />
        <Route path='/graficos' element={<Grafico />} />
        <Route path='/meu-perfil' element={<MeuPerfil />} />
+       <Route path='/detalhesproduto' element={<DetalheProduto />} />
+
+       <Route path='/alterar/:idParam' element={<CadastroProduto />} />
        </Routes>
     </BrowserRouter>
   </React.StrictMode>

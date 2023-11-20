@@ -91,7 +91,7 @@ function MeuPerfil() {
                             <input type='text' placeholder='CONFIRME SEU EMAIL'></input>
                         </div>
 
-                        <input placeholder='Receber notificações sobre lançamentos e promoções' type='checked'></input>
+                        <input type='checked'></input> &nbsp; Receber Notificações
 
                         <button onClick={EnviarImagem}>Salvar</button>
                     </div>

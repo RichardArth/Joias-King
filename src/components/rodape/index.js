@@ -52,7 +52,7 @@ function Rodape() {
                 <h2>MINHA CONTA</h2>
 
                 <nav>
-                    <h5>Meu Perfil</h5>
+                    <Link to='/meu-perfil'>Meu Perfil</Link>
                     <h5>Meus Pedidos</h5>
                     <h5>Minha Wishlist</h5>
                 </nav>

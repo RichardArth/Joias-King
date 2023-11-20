@@ -1,13 +1,24 @@
 import './index.scss';
+
 import { useEffect } from 'react';
 import axios from 'axios';
 import { API_URL } from '../../constants.js';
 import { useState } from 'react';
+
 import MenuAdm from '../../components/menu-adm/index.js';
+import { RemoverProduto } from '../../api/produto';
+
+import { toast } from 'react-toastify';
+
+import { confirmAlert } from 'react-confirm-alert'
+import { useNavigate } from 'react-router-dom';
 
 function LandingAdm() {
     
     const[produtos, setProdutos] = useState([]);
+    const[filtro, setFiltro] = useState('');
+
+    const nav = useNavigate()
 
     async function ListarProdutos() {
         
@@ -15,15 +26,43 @@ function LandingAdm() {
         setProdutos(r.data)
     }
 
-    async function ConsultarProduto(nome) {
+    async function ConsultarProduto(filtro) {
         
-        const r = await axios.get(API_URL + `/busca?nome=${nome}`)
-        return r.data
+        const r = await axios.get(API_URL + `/produtos/busca?nome=${filtro}`)
+        setFiltro(r)
     }
 
     useEffect(() => {
         ListarProdutos();
     })
+
+    async function DeletarProduto(id, nome) {
+        
+    confirmAlert({
+        title: 'Deletar Produto',
+        message: `Tem certeza que quer remover o produto?`,
+        buttons: [
+            {
+                label: 'Sim',
+                onClick: async() => {
+                    const r = await RemoverProduto(id, nome);
+                    if(filtro === '')
+                        ListarProdutos();
+                    else
+                        ConsultarProduto()
+                    toast.success('Produto deletado com sucesso!')
+                }
+            },
+            {
+                label: 'Não'
+            }
+        ]
+    })
+    }
+
+    function EditarProduto(id) {
+        nav(`admin/alterar/${id}`)
+    }
 
     return(
         <section className='secao-01-adm'>
@@ -41,9 +80,16 @@ function LandingAdm() {
                     </h1>
                 </div>
 
+                <div className='barra-pesquisa'>
+                    <input value={filtro} onChange={e => setFiltro(e.target.value)} placeholder='Buscar produto' type='text'></input>
+                    <img onClick={ConsultarProduto} src='./assets/images/lupa.png'></img>
+                </div>
+
                 <main className='s1p-produtos'>
+
+
                         {produtos.map(e =>                    
-                            <div className='ficha-produto'>
+                            <div key={e.id} className='ficha-produto'>
                                 <div className='imagem-produto'>
                                     {e.imagem}
                                 </div>
@@ -54,8 +100,8 @@ function LandingAdm() {
                                 </div>
 
                                 <div className='personalizar-produto'>
-                                    <img src='./assets/images/deletar-produto.png'></img>
-                                    <img src='./assets/images/alterar-produto.png'></img>
+                                    <img src='./assets/images/deletar-produto.png' onClick={() => DeletarProduto(e.id, e.nome)}></img>
+                                    <img src='./assets/images/alterar-produto.png' onClick={() => EditarProduto(e.id)}></img>
                                 </div>
                             </div>   
                      )}

@@ -20,7 +20,7 @@ function MenuAdm() {
 
 
     return(
-        <div className='menu-adm'>
+        <div className='parte-menu-adm'>
                 <header>
                     <div>
                         <span>R</span>

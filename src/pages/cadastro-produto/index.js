@@ -1,25 +1,52 @@
 import CabecalhoAdm from '../../components/cabecalhoadm/index.js';
 import './index.scss';
-import { useState } from 'react';
-import { API_URL } from '../../constants.js';
-import axios from 'axios';
-import storage from 'local-storage';
-import storage from 'local-storage';
 import { toast } from 'react-toastify';
+import { BuscarID, CadastrarProduto, EnviarImagem, BuscarImagem, AlterarProduto } from '../../api/produto';
+import { useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useEffect } from 'react';
 import storage from 'local-storage';
 
 
 function CadastroProduto() {
   
   const[id, setID] = useState(0);
-  const[nomeproduto, setNomeProduto] = useState('');
+  const[nome, setNome] = useState('');
   const[preco, setPreco] = useState('');
   const[tipo, setTipo] = useState('')
   const[detalhes, setDetalhes] = useState('');
   const[estoque, setEstoque] = useState(0);
+  const[tamanho, setTamanho] = useState(0)
   const[imagem, setImagem] = useState();
   const[codigo, setCodigo] = useState('');
-  const[erro, setErro] = useState('');
+  
+  const { idParam } = useParams();
+
+  useEffect(() => {
+    if(idParam){
+      CarregarProduto();
+    }
+  }, [])
+
+  const nav = useNavigate();
+
+  useEffect(() => {
+    if(!storage('adm-login')) {
+        nav('/adm-login')
+    }
+}, [])
+
+  async function CarregarProduto() {
+    const r = await BuscarID(idParam);
+    setNome(r.nome)
+    setPreco(r.preco)
+    setTipo(r.tipo)
+    setDetalhes(r.detalhes)
+    setEstoque(r.estoque)
+    setTamanho(r.tamanho)
+    setImagem(r.imagem)
+    setID(r.id)
+  }
 
 
   function escolherimagem() {
@@ -28,97 +55,58 @@ function CadastroProduto() {
 
 
   function mostrarimg(){
-    return URL.createObjectURL(imagem)
-  }
-
-
-  async function CadastrarProduto() {
-    try {
-      const usuario = storage('usuario-logado').id;
-
-      if(id === 0){
-      const produto = await axios.post(API_URL + '/produto', {
-        nome: nomeproduto,
-        tipo:tipo,
-        detalhes:detalhes,
-        estoque:estoque,
-        codigo:codigo
-      })
-      
-      const r = await EnviarImagem(produto.id, imagem);
-      toast.success('👍 Produto cadastrado com sucesso!')
-      setID(produto.id);
+    if(typeof (imagem) == 'object'){
+      return URL.createObjectURL(imagem)
     }
-    
+
     else {
-      const produto = await axios.put(API_URL + `/produto/${id}`, {
-        id: id,
-        nome: nomeproduto,
-        tipo:tipo,
-        detalhes:detalhes,
-        estoque:estoque,
-        codigo:codigo
-      })
-
-      const r = await EnviarImagem(id, imagem);
-      toast.success('👍 Produto Cadastrado com sucesso!')
-      return r.data
-    }
-
-    }
-
-    catch (err) {
-      if(err.response.status === 400){
-        setErro(err.response.data.erro)
-      }
+      return BuscarImagem(imagem)
     }
   }
 
-  async function EnviarImagem(id, imagem) {
 
-    const formData = new FormData();
-    formData.append('imagem', imagem);
-
-
-    const r = await axios.put(API_URL + `/produto/${id}`, formData, {
-      headers: {
-        "Content-Type": "multipart/form-data"
-      },
-    })
-
-    return r.status;
-  }
-
-  async function EditarProduto() {
+  async function SalvarProduto() {
     try {
-      const usuario = storage('usuario-logado').id;
+      if(!imagem) {
+        throw new Error('Escolha a imagem do produto!');
+      }
 
-      const produto = await axios.put(API_URL + `/produto/${id}`, {
-        id: id,
-        nome: nomeproduto,
-        tipo:tipo,
-        detalhes:detalhes,
-        estoque:estoque,
-        codigo:codigo
-      })
+      const usuario = storage('adm-login').id;
 
-      const r = await EnviarImagem(produto.id, imagem);
+      if(id === 0) {
+        const novoproduto = await CadastrarProduto(nome, preco, tipo, detalhes, estoque, tamanho, codigo)
+        await EnviarImagem(novoproduto, imagem);
+        setID(novoproduto.id)
 
-      toast.success('👍 Produto alterado com sucesso!')
-      return r.data
-    }
-    catch(err) {
-        toast.error(setErro(err.response.data.erro))
+        toast.success('Produto cadastrado com sucesso!')
+      }
+
+      else {
+        await AlterarProduto(id, nome, preco, tipo, detalhes, estoque, tamanho, codigo,);
+
+        if(typeof (imagem) == 'object')
+          await EnviarImagem(id, imagem);
+        toast.success('Produto alterado com sucesso!')
+      }
+    }  catch(err) {
+      if(err.response) {
+        toast.error(err.response.data.erro)
+      }
+
+      else {
+        toast.error(err.message)
+      }
     }
   }
 
   function NovoProduto() {
     setID(0);
-    setNomeProduto('')
+    setNome('')
     setTipo('')
     setPreco('')
     setCodigo('')
     setDetalhes('')
+    setTamanho('')
     setImagem()
     setEstoque('')
   }
@@ -138,7 +126,7 @@ function CadastroProduto() {
         <div className='pc-valores'>
           <div>
             <h5>NOME DO PRODUTO</h5>
-            <input type='text' value={nomeproduto} onChange={e => setNomeProduto(e.target.value)} required></input>
+            <input type='text' value={nome} onChange={e => setNome(e.target.value)} required></input>
           </div>
 
           <div>
@@ -162,6 +150,11 @@ function CadastroProduto() {
           <div>
             <h5>DETALHES</h5>
             <textarea type='text' value={detalhes} onChange={e => setDetalhes(e.target.value)} required></textarea>
+          </div>
+
+          <div>
+            <h5>TAMANHO</h5>
+            <input type='number' value={tamanho} onChange={e => setTamanho(Number(e.target.value))} required /> 
           </div>
 
           <div>
@@ -193,7 +186,7 @@ function CadastroProduto() {
       </main>
 
       <div className="pc-salvar-produto">
-        <button onClick={CadastrarProduto}>{id === 0 ? 'SALVAR PRODUTO' : 'ALTERAR'}</button> &nbsp; &nbsp;
+        <button onClick={SalvarProduto}>{id === 0 ? 'SALVAR PRODUTO' : 'ALTERAR'}</button> &nbsp; &nbsp;
         <button onClick={NovoProduto}>NOVO</button>
       </div>
     </div>

@@ -1,6 +1,6 @@
-.s1adm-esquerda {
-    width: 25%;
-    background-color: #D9D9D9 !important;
+.parte-menu-adm {
+    width: 22%;
+    background-color: #1d1d1d !important;
 
     header {
         height: 14%;
@@ -14,9 +14,13 @@
             align-items: center;
             gap:15px;
             padding: 20px;
+            color:#e2dede;
 
-            img {
-                width: 20%;
+            span {
+                padding: 10px 15px;
+                border-radius: 300px;
+                background-color: rgb(1, 1, 99);
+                text-align: center;
             }
         }
     }
@@ -24,11 +28,27 @@
     .s1eadm-projetos,
     .s1eadm-produtos {
         padding: 20px;
+        color:#e2dede;
+        margin: 10px;
 
-        Link {
-            text-decoration: none;
-            text-transform: none;
-            cursor: pointer;
+        li {
+          margin: 10px;
         }
+    }
+
+    .sair-pagina {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-left: 10px;
+        border: none;
+        background-color: #1d1d1d;
+        cursor: pointer;
+        font:16px 'Allerta';
+        color:#e2dede;
+        letter-spacing: 2px;
+        font-weight: 600;
+        margin-top: 50px;
     }
 }

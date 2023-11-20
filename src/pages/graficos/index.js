@@ -1,5 +1,6 @@
 import './index.scss';
 import MenuAdm from '../../components/menu-adm';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer} from 'recharts';
 
 
 
@@ -8,9 +9,9 @@ function LandingAdm() {
     const data = [
         {brand: 'Aliança', porcentagem: 80},
         {brand: 'Pet', porcentagem: 40},
-        {brand: 'Colar/Corrente', porcentagem: 20},
+        {brand: 'Colar/Corrente', porcentagem: 50},
         {brand: 'Anel', porcentagem: 90},
-        {brand: 'Brinco', porcentagem: 10},
+        {brand: 'Brinco', porcentagem: 30},
         {brand: 'Namorados', porcentagem: 60},
     ];
 
@@ -28,7 +29,7 @@ function LandingAdm() {
 
                 <div className='s1admp-titulo'>
                     <h1>
-                        SEJA BEM-VINDO RICHARD
+                        SEJA BEM-VINDO
                     </h1>
 
                     <div className='graficos2'>

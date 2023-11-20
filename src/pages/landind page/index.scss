@@ -198,12 +198,19 @@
 
         .s3-central-avaliacoes {
 
+            
+          
+
+            .carrossel {
+                width: 99vw;
+            }
+
             .s3ca-titulo {
                 display: flex;
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-
+                  
                 a:-webkit-any-link {
                     color:rgb(222, 15, 15);
                     cursor: pointer;
@@ -227,6 +234,9 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                width: 100vw;
+                overflow: none;
+                color:#353535;
 
                 div {
                     display: flex;
