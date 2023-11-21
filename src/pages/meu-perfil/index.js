@@ -40,7 +40,7 @@ function MeuPerfil() {
         <div className='pagina-meu-perfil'>
             <div className='mp-cabecalho'>
                 <Cabecalho />
-                <hr></hr>
+                <hr className='barra01'></hr>
             </div>
 
             <div className='mp-links'>
@@ -52,12 +52,12 @@ function MeuPerfil() {
                 <div id='pedidos-promocoes'>
                     <div>
                         <Link>Seus Pedidos</Link>
-                        <Link>Promoções</Link>
+                        <Link>Produtos</Link>
                     </div>
 
                 <div id='pedidos-promocoes'>
                    <div>
-                        <Link>Meus Cupons</Link>
+                        <Link to='/carrinho'>Carrinho</Link>
                         <Link>Sua Wishlist</Link>
                    </div>
                 </div>
@@ -65,7 +65,7 @@ function MeuPerfil() {
                 </div>
             </div>
 
-            <hr style={{backgroundColor: '#D9D9D9'}}></hr>
+            <hr className='barra02' style={{backgroundColor: '#D9D9D9'}}></hr>
 
             <main>
                 <h3>Informações da Conta</h3>
