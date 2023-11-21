@@ -35,7 +35,7 @@ import Centralatendimento from './pages/central-atendimento';
 import Trocas from './pages/trocas-devoluçoes';
 import Grafico from './pages/graficos';
 import MeuPerfil from './pages/meu-perfil';
-import DetalheProduto from './pages/detalhesproduto';
+import DetalhesProduto from './pages/detalhes-produto';
 
 import { register } from 'swiper/element/bundle'
 import 'swiper/scss';
@@ -76,8 +76,8 @@ root.render(
        <Route path='/trocas-devoluçao' element={<Trocas />} />
        <Route path='/graficos' element={<Grafico />} />
        <Route path='/meu-perfil' element={<MeuPerfil />} />
-       <Route path='/detalhesproduto' element={<DetalheProduto />} />
-
+       
+       <Route path='/detalhesproduto/:idParam' element={<DetalhesProduto />} />
        <Route path='/alterar/:idParam' element={<CadastroProduto />} />
        </Routes>
     </BrowserRouter>

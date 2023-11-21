@@ -2,6 +2,12 @@
     width: 22%;
     background-color: #1d1d1d !important;
 
+    a:-webkit-any-link {
+        color:#e2dede !important;
+        cursor: pointer;
+        text-decoration:none;
+    }
+
     header {
         height: 14%;
         display: flex;
