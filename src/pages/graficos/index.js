@@ -42,6 +42,9 @@ function LandingAdm() {
                     </BarChart>
                     </ResponsiveContainer>
                     </div>
+
+
+                   <a className='botao-planilha' href='https://docs.google.com/spreadsheets/d/1MKmsJJbJBZ9FE0lpTEk-iOSAv-q5pzH1LmrQ5NEWdnY/edit#gid=0'>Planilha</a>
                 </div>
 
            
