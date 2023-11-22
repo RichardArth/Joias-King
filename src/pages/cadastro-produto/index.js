@@ -113,7 +113,6 @@ function CadastroProduto() {
 
   return (
     <div className="pagina-cadastro-produto">
-
       <div className='pc-cabecalho'>
         <CabecalhoAdm />
       </div>

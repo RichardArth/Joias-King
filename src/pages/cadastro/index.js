@@ -1,17 +1,18 @@
-import { useState } from 'react';
+import {useRef, useState } from 'react';
 import './index.scss';
 import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
-import { API_URL } from '../../constants.js';
+import { API_URL } from '../../constants';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import LoadingBar from 'react-top-loading-bar';
-import storage from 'local-storage'
+import storage from 'local-storage';
+import { toast } from 'react-toastify';
 
 function Index(){
   const [senhaVisivel, setSenhaVisivel] = useState(false);
 
   const navigate = useNavigate();
-
+  const ref = useRef();
 
   const[email, setEmail] = useState('');
   const[senha, setSenha] = useState('');
@@ -20,7 +21,6 @@ function Index(){
   const[sobrenome, setSobrenome] = useState('');
   const[nascimento, setNascimento] = useState('');
   const[cpf, setCpf] = useState('');
-  const[erro, setErro] = useState('')
   const[carregando, setCarregando] = useState(false);
 
   const toggleSenhaVisivel = () => {
@@ -28,6 +28,7 @@ function Index(){
   };
 
   async function Cadastrar() {
+    ref.current.continuousStart();
     setCarregando(true);
 
     const cliente = {
@@ -43,10 +44,11 @@ function Index(){
     try {
       const r = await axios.post(API_URL + '/cadastrar',cliente
       );
-      storage('adm-login', r);
+      storage('cliente-logado', r);
+      toast.success('Cadastro realizado!')
 
       setTimeout(() => {
-        navigate('/');
+        navigate('/login');
       }, 3000)
 
     }
@@ -55,7 +57,7 @@ function Index(){
       setCarregando(false)
 
       if(err.response.status === 401){
-        setErro(err.response.data.erro)
+        toast.error(err.response.data.erro)
       }
     }
   }
@@ -64,7 +66,7 @@ function Index(){
 
 return(
     <div className='index'>
-        <LoadingBar/>
+        <LoadingBar color='#B88B1B' ref={ref}/>
         <section className='cadastro01'>
         <div className='cabecalho-cadastro'>
           <Link to='/'><img src='./assets/images/logopreta.png'/></Link>
@@ -97,19 +99,19 @@ return(
                 </div>
                 
             <h4>TELEFONE</h4>
-            <input type="text" placeholder="Digite seu telefone" value={telefone} onChange={e => setTelefone(e.target.value)}/>
+            <input type="text" placeholder="Digite seu telefone" value={telefone} onChange={e => setTelefone(e.target.value)} required/>
 
             <h4>NOME</h4>
-            <input type="text" placeholder="Digite seu nome" value={nome} onChange={e => setNome(e.target.value)}/>
+            <input type="text" placeholder="Digite seu nome" value={nome} onChange={e => setNome(e.target.value)} required/>
 
             <h4>SOBRENOME</h4>
-            <input type="text" placeholder="Digite seu sobrenome" value={sobrenome} onChange={e => setSobrenome(e.target.value)}/>
+            <input type="text" placeholder="Digite seu sobrenome" value={sobrenome} onChange={e => setSobrenome(e.target.value)} required/>
 
             <h4>DATA DE NASCIMENTO</h4>
-            <input type="date" placeholder="Digite sua data de nascimento" value={nascimento} onChange={e => setNascimento(e.target.value)}/>
+            <input type="date" placeholder="Digite sua data de nascimento" value={nascimento} onChange={e => setNascimento(e.target.value)} required/>
 
             <h4>CPF</h4>
-            <input type="text" placeholder="Digite seu CPF" value={cpf} onChange={e => setCpf(e.target.value)}/>
+            <input type="text" placeholder="Digite seu CPF" value={cpf} onChange={e => setCpf(e.target.value)} required/>
 
           </div>
           <button onClick={Cadastrar} className='jump-button'>CADASTRAR</button>

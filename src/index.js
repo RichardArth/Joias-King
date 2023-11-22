@@ -23,7 +23,6 @@ import CuidadoJoias from './pages/cuidado com as joias';
 import LandingPage from './pages/landind page';
 import LandingAdm from './pages/home-adm';
 import Carrinho from './pages/carrinho';
-import Avaliacoes from './pages/central-avaliacoes';
 import Aliancas from './pages/aliancas';
 import Aneis from './pages/aneis';
 import Brincos from './pages/brincos';
@@ -64,7 +63,6 @@ root.render(
        <Route path='/cuidado-joias' element={<CuidadoJoias />} />
        <Route path='/home-adm'element={<LandingAdm />} />
        <Route path='/carrinho' element={<Carrinho />} />
-       <Route path='/central-avaliaçoes' element={<Avaliacoes />} />
        <Route path='/aliancas' element={<Aliancas />}/>
        <Route path='/aneis' element={<Aneis />}/>
        <Route path='/brincos' element={<Brincos />}/>

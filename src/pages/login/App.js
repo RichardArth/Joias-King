@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import LoadingBar from 'react-top-loading-bar'
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import storage from 'local-storage';
 
 
 function App() {
@@ -20,18 +21,19 @@ function App() {
     setSenhaVisivel(!senhaVisivel);
   };
 
-  let navigate = useNavigate();
-  let ref = useRef();
+  const navigate = useNavigate();
+  const ref = useRef();
 
   async function Logar() {
     ref.current.continuousStart();
     setCarregando(true);
 
     try {
-      let r = await axios.post(API_URL + '/login', {
+      const r = await axios.post(API_URL + '/login', {
         email: email,
         senha: senha
       });
+      storage('cliente-logado', r)
 
       setTimeout(() => {
         navigate('/');
@@ -82,19 +84,19 @@ function App() {
 
                 </div>
 
-            <button onClick={Logar} disabled={carregando} className='bt-log'>LOGIN</button>
-            <h4 style={{color: '#DE0F0F'}}>{erro}</h4>
+              <button onClick={Logar} disabled={carregando} className='bt-log'>LOGIN</button>
+              <h4 className='erro' style={{color: '#DE0F0F'}}>{erro}</h4>
 
-            <h4 className='s3-login'>OU</h4>
+             <h4 className='s3-login'>OU</h4>
 
-          <button> <img src='./assets/images/face.png'/> Continue com Facebook</button>
-          <button> <img src='./assets/images/google.png'/> Continue com Google </button>
+              <button> <img src='./assets/images/face.png'/> Continue com Facebook</button>
+              <button> <img src='./assets/images/google.png'/> Continue com Google </button>
 
-            <Link to='/AlterarSenha'>Esqueci minha senha</Link>
-            <Link to='/cadastro'>Ainda não sou cliente</Link>
-            <Link to='/adm-login'>Sou Administrador</Link>
+              <Link to='/AlterarSenha'>Esqueci minha senha</Link>
+              <Link to='/cadastro'>Ainda não sou cliente</Link>
+              <Link to='/adm-login'>Sou Administrador</Link>
 
-          </div>
+            </div>
         </div>
       </section>
 

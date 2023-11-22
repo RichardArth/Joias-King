@@ -4,11 +4,18 @@
     align-items: center;
     justify-content: space-between;
     }
+
+    a:-webkit-any-link {
+        cursor: pointer;
+        text-decoration: none;
+        color:#000;
+      }
     
     .cabecalho-esquerda{
         display: flex;
         align-items: center;
         cursor: pointer;
+        margin-left: 40px;
     } 
     
     .cabecalho-esquerda img{

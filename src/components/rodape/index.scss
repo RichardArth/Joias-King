@@ -92,8 +92,7 @@
         display: flex;
         flex-direction: column;
         width: 26%;
-        height: 33vh;
-        padding-top: 15px;
+        margin-top: -7px;
         
 
         h2 {
@@ -116,9 +115,9 @@
     .minha-conta {
         display: flex;
         flex-direction: column;
-        gap:20px;
-        height: 29vh;
+        margin-top: 35px;
         width: 22%;
+        height: 30vh;
 
         h2 {
             color:#Fff;
@@ -126,10 +125,10 @@
             font:25px 'Allerta';
         }
         
-        h5 {
-            color:#fff;
-            font:14px 'Allerta';
-            margin: 5px;
+        nav {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
         }
     }
 
@@ -137,5 +136,17 @@
         color:#fff !important;
         cursor: pointer;
         text-decoration:none;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Estilos específicos para telas maiores que 768 pixels de largura */
+    .rodape {
+        flex-direction: row; /* Alterado para linha em telas maiores */
+        height: 35vh;
+        padding: 0; /* Removido espaçamento interno */
+        hr {
+            display: block; /* Exibir a linha horizontal em telas maiores */
+        }
     }
 }

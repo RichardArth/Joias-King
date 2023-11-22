@@ -22,7 +22,7 @@ export async function EnviarImagem(id, imagem) {
     const formData = new formData();
     formData.append('imagem', imagem);
 
-    const r = await axios.put(API_URL + `/produto/${id}/imagem`, formData,{
+    const r = await axios.put(API_URL + `/produto/${id}/imagem`, formData, {
         headers: {
             "Content-Type": "multipart/form-data"
         }

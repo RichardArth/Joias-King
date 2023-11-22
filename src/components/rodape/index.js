@@ -53,8 +53,8 @@ function Rodape() {
 
                 <nav>
                     <Link to='/meu-perfil'>Meu Perfil</Link>
-                    <h5>Meus Pedidos</h5>
-                    <h5>Minha Wishlist</h5>
+                    <Link>Meus Pedidos</Link>
+                    <Link>Minha Wishlist</Link>
                 </nav>
             </div>
         </div>
