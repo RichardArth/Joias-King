@@ -22,4 +22,19 @@
         margin: 3px;
         font-weight: 600;
     }
+
+    
+    .produtos-pets {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        gap:10px;
+        width: 100%;
+    
+        .produto-ficha-s1 {
+            width: 100%;
+            gap:10px;
+        }
+    }
 }

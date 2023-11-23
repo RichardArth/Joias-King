@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import storage from 'local-storage';
-  
+
 
 function LandingPage() {
     const[slidePerview] = useState(2);

@@ -21,8 +21,18 @@ export default function InforProduto(props) {
                         </div>
 
                         <div>
+                                <h2>PREÇO:</h2>
+                                <h4>{props.produto.preco}</h4>
+                        </div>
+
+                        <div>
                                 <h2>DETALHES:</h2>
                                 <h4>{props.produto.detalhes}</h4>
+                        </div>
+
+                        <div>
+                                <h2>ESTOQUE:</h2>
+                                <h4>{props.produto.estoque}</h4>
                         </div>
             </div>
 

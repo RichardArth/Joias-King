@@ -1,11 +1,9 @@
 import './index.scss';
 
 import { useEffect } from 'react';
-import axios from 'axios';
-import { API_URL } from '../../constants.js';
 import { useState } from 'react';
 
-import { RemoverProduto, AlterarProduto, ConsultarProduto, CarregarProdutos } from '../../api/produto';
+import { RemoverProduto, ConsultarProduto, CarregarProdutos } from '../../api/produto';
 
 import { toast } from 'react-toastify';
 import storage from 'local-storage';
@@ -149,15 +147,18 @@ function LandingAdm() {
                             <tbody>
 
                                 {produtos.map(e =>
-                                    <tr key={e.id}>
+                                    <tr key={e.id} onClick={() => abrirDetalhes(e.id)}>
                                         <td>{e.id}</td>
                                         <td>{e.nome.substr(0, 14)}...</td>
                                         <td>{e.tipo}</td>
                                         <td>{e.preco}</td>
                                         <td>{e.estoque}</td>
                                         <td className='funcoes'>
-                                            <img onClick={() => EditarProduto(e.id)} src='./assets/images/alterar-produto.png'></img>
-                                            <img onClick={() => DeletarProduto(e.id, e.nome)} src='./assets/images/deletar-produto.png'></img>
+                                            <img onClick={x => { x.stopPropagation();
+                                                                 EditarProduto(e.id)} } src='./assets/images/alterar-produto.png'></img>
+
+                                            <img onClick={x => { x.stopPropagation();
+                                                                 DeletarProduto(e.id, e.nome)}} src='./assets/images/deletar-produto.png'></img>
                                         </td>
                                     </tr>
                                 )}

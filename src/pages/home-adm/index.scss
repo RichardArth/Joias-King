@@ -169,6 +169,8 @@
                         padding: 20px;
                         border: 1px solid black;
                         text-align: center;
+                        transition: 0.3s ease-in-out;
+
 
                         td {
                             font:15px 'Inter';
@@ -182,6 +184,11 @@
                         .funcoes {
                             width: 10%;
                         }
+                    }
+
+                    tr:hover {
+                        background-color: #dfdede;
+                        transition: 0.3s ease-in-out;
                     }
                 }
             }

@@ -1,28 +1,55 @@
 import './index.scss';
 import Cabecalho from '../../components/cabecalho';
 import Rodape from '../../components/rodape';
-import { Swiper, SwiperSlide } from 'swiper/react'
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { CarregarPets } from '../../api/categoria';
+import { BuscarImagem } from '../../api/produto';
+
+
+function Pets(){
   
 
-function Aliancas() {
+    const[imagem, setImagem] = useState('');
+    const[pets, setPets] = useState([]);
+
+    async function ListarPets() {
+        const r = await CarregarPets();
+        setPets(r)
+    }
+
+    useEffect(() => {
+        ListarPets()
+    }, [])
+
+    function mostrarimg(){
+        if(typeof (imagem) == 'object'){
+          return URL.createObjectURL(imagem)
+        }
+    
+        else {
+          return BuscarImagem(imagem)
+        }
+      }
+
     return(
         <div className='pagina-alianca'>
             <Cabecalho />
 
-            <div className='produto-ficha-s1'>
-                    <div className='produto-s6'>
-                        <img src='./assets/images/ct-pet.png'></img>
-                        <h5>Anel dois aros pave Ouro amarelo com Diamantes</h5>
-                        <h5>Por R$ 6.760,00  ou</h5>
-                        <h4>10x de R$ 676,00</h4>
+            <div className='produtos-pets'>
+            {pets.map(e =>
+                <div className='produto-ficha-s1'>
+                    <div className='produto-s2'>
+                        <img src={mostrarimg()}></img>
+                        <h5>{e.nome}</h5>
+                        <h4 style={{color: '#B88B1B'}}>R${e.preco}</h4>
+                        <h6>Estoque:{e.estoque}</h6>
                     </div>
-                    </div>
-           
+                </div>
+            )}
+            </div>
             <Rodape />
         </div>
     )
 }
 
-export default Aliancas;
+export default Pets;

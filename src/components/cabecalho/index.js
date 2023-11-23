@@ -18,7 +18,7 @@ function Cabecalho() {
         
     const r = await axios.get(API_URL + `/produtos/busca?nome=${filtro}`)
     setFiltro(r)
-    nav('/produtos')
+    nav(`/produtos/${filtro}`)
 }
 
     return(

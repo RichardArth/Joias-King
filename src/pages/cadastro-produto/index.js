@@ -86,7 +86,7 @@ function CadastroProduto() {
         await AlterarProduto(id, nome, preco, tipo, detalhes, estoque, tamanho, codigo);
         if(typeof (imagem) == 'object')
           await EnviarImagem(id, imagem);
-        toast.success('Produto alterado com sucesso!')
+        toast.dark('Produto alterado com sucesso!')
       }
     }  catch(err) {
       if(err.response) {

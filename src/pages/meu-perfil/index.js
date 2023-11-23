@@ -6,6 +6,7 @@ import axios from 'axios';
 import { API_URL } from '../../constants';
 import './index.scss';
 import storage from 'local-storage';
+import { confirmAlert } from 'react-confirm-alert';
 
 
 function MeuPerfil() {
@@ -13,6 +14,24 @@ function MeuPerfil() {
     const[imagem, setImagem] = useState('');
     const nav = useNavigate();
     const usuario = storage('cliente-logado');
+
+    async function SairConta() {
+        
+        confirmAlert({
+            title: 'Sair da Conta',
+            message: `Deseja sair?`,
+            buttons: [
+                {
+                    label: 'Sim',
+                    onClick: async () => {
+                        const r = SairPagina();
+                }},
+                {
+                    label: 'Não'
+                }
+            ]
+        })
+        }
 
     async function EnviarImagem(id, imagem) {
 
@@ -39,8 +58,10 @@ function MeuPerfil() {
       }
 
       function SairPagina() {
-        storage.remove('cliente-logado')
-        nav('/')
+        setTimeout(() => {
+            storage.remove('cliente-logado')
+            nav('/');
+          }, 2000)
     }
 
 
@@ -100,7 +121,7 @@ function MeuPerfil() {
                         </div>
 
                         <button onClick={EnviarImagem}>Salvar</button>
-                        <button onClick={SairPagina}>Sair</button>
+                        <button onClick={SairConta}>Sair</button>
                     </div>
 
                     <hr></hr>
