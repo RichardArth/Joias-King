@@ -5,7 +5,7 @@ import axios from 'axios';
 import { API_URL } from '../../constants.js';
 import { useState } from 'react';
 
-import { RemoverProduto } from '../../api/produto';
+import { RemoverProduto, AlterarProduto, ConsultarProduto, CarregarProdutos } from '../../api/produto';
 
 import { toast } from 'react-toastify';
 import storage from 'local-storage';
@@ -21,20 +21,23 @@ function LandingAdm() {
     const nav = useNavigate()
 
     async function ListarProdutos() {
-        
-        const r = await axios.get(API_URL + '/produtos')
-        setProdutos(r.data)
+        const r = await CarregarProdutos();
+        setProdutos(r)
     }
 
-    async function ConsultarProduto(filtro) {
-        
-        const r = await axios.get(API_URL + `/produtos/busca?nome=${filtro}`)
-        setFiltro(r)
+    async function Filtrar() {
+        const r = await ConsultarProduto(filtro)
+        setProdutos(r)
     }
+
+    
 
     useEffect(() => {
         ListarProdutos();
-    })
+        if(!storage('adm-login')) {
+            nav('/adm-login')
+        }
+    }, [])
 
     function abrirDetalhes(id) {
         nav(`/detalhesproduto/${id}`);
@@ -44,17 +47,19 @@ function LandingAdm() {
         
     confirmAlert({
         title: 'Deletar Produto',
-        message: `Tem certeza que quer remover o produto?`,
+        message: `Tem certeza que deseja remover: ${nome}?`,
         buttons: [
             {
                 label: 'Sim',
-                onClick: async() => {
+                onClick: async () => {
                     const r = await RemoverProduto(id, nome);
-                    if(filtro === '')
+                    if(filtro === ''){
                         ListarProdutos();
-                    else
-                        ConsultarProduto()
-                    toast.success('Produto deletado com sucesso!')
+                    }
+                    else {
+                        ConsultarProduto(filtro)
+                    }
+                    toast.info('Produto deletado com sucesso!')
                 }
             },
             {
@@ -65,7 +70,7 @@ function LandingAdm() {
     }
 
     function EditarProduto(id) {
-        nav(`admin/cd-produto/${id}`)
+        nav(`/alterar/${id}`);
     }
 
     function SairPagina() {
@@ -85,7 +90,7 @@ function LandingAdm() {
             <div className='parte-menu-adm'>
                 <header>
                     <div>
-                        <span>R</span>
+                        <span>A</span>
                         <h4>Bem-Vindo ADM!</h4>
                     </div>
                     <hr></hr>
@@ -125,31 +130,39 @@ function LandingAdm() {
 
                 <div className='barra-pesquisa'>
                     <input value={filtro} onChange={e => setFiltro(e.target.value)} placeholder='Buscar produto' type='text'></input>
-                    <img onClick={ConsultarProduto} src='./assets/images/lupa.png'></img>
+                    <img onClick={Filtrar} src='./assets/images/lupa.png'></img>
                 </div>
 
                 <main className='s1p-produtos'>
 
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>PRODUTO</th>
+                                    <th>TIPO</th>
+                                    <th>PRECO</th>
+                                    <th>ESTOQUE</th>
+                                </tr>
+                            </thead>
 
-                        {produtos.map(e =>
-                        <div key={e.id} onClick={() => abrirDetalhes(e.id)}>                
-                            <div key={e.id} className='ficha-produto'>
-                                <div className='imagem-produto'>
-                                    {e.imagem}
-                                </div>
+                            <tbody>
 
-                                <div className='descricao-produto'>
-                                    <h4>{e.nome}</h4>
-                                    <h5 style={{color: '#B88B1B'}}>R${e.preco}</h5>
-                                </div>
-
-                                <div className='personalizar-produto'>
-                                    <img src='./assets/images/deletar-produto.png' onClick={x => {x.stopPropagation(); DeletarProduto(e.id, e.nome)} }></img>
-                                    <img src='./assets/images/alterar-produto.png' onClick={x => {x.stopPropagation(); EditarProduto(e.id)} }></img>
-                                </div>
-                            </div>
-                        </div>      
-                     )}
+                                {produtos.map(e =>
+                                    <tr key={e.id}>
+                                        <td>{e.id}</td>
+                                        <td>{e.nome.substr(0, 14)}...</td>
+                                        <td>{e.tipo}</td>
+                                        <td>{e.preco}</td>
+                                        <td>{e.estoque}</td>
+                                        <td className='funcoes'>
+                                            <img onClick={() => EditarProduto(e.id)} src='./assets/images/alterar-produto.png'></img>
+                                            <img onClick={() => DeletarProduto(e.id, e.nome)} src='./assets/images/deletar-produto.png'></img>
+                                        </td>
+                                    </tr>
+                                )}
+                            </tbody>
+                        </table>    
                 </main> 
             </div>
         </section>

@@ -45,6 +45,7 @@ function CadastroProduto() {
     setEstoque(r.estoque)
     setTamanho(r.tamanho)
     setImagem(r.imagem)
+    setCodigo(r.codigo)
     setID(r.id)
   }
 
@@ -75,15 +76,14 @@ function CadastroProduto() {
 
       if(id === 0) {
         const novoproduto = await CadastrarProduto(nome, preco, tipo, detalhes, estoque, tamanho, codigo)
-        await EnviarImagem(novoproduto, imagem);
+        await EnviarImagem(novoproduto.id, imagem);
         setID(novoproduto.id)
 
         toast.success('Produto cadastrado com sucesso!')
       }
 
       else {
-        await AlterarProduto(id, nome, preco, tipo, detalhes, estoque, tamanho, codigo,);
-
+        await AlterarProduto(id, nome, preco, tipo, detalhes, estoque, tamanho, codigo);
         if(typeof (imagem) == 'object')
           await EnviarImagem(id, imagem);
         toast.success('Produto alterado com sucesso!')
@@ -171,7 +171,7 @@ function CadastroProduto() {
             <div className='escolher-imagem' onClick={escolherimagem} >
 
               {!imagem && 
-                  <img style={{width: 80}} src='./assets/images/upload.png'></img>}
+                  <img style={{width: 100}} src='/assets/images/upload.png'></img>}
               
               {imagem && 
                 <img className='imagem-selecionada' src={mostrarimg()} alt=''/>}

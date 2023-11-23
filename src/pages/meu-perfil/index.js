@@ -1,15 +1,18 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Cabecalho from '../../components/cabecalho'
 import Rodape from '../../components/rodape'
 import { useState } from 'react';
 import axios from 'axios';
 import { API_URL } from '../../constants';
-import './index.scss'
+import './index.scss';
+import storage from 'local-storage';
 
 
 function MeuPerfil() {
 
     const[imagem, setImagem] = useState('');
+    const nav = useNavigate();
+    const usuario = storage('cliente-logado');
 
     async function EnviarImagem(id, imagem) {
 
@@ -34,6 +37,11 @@ function MeuPerfil() {
       function mostrarimg(){
         return URL.createObjectURL(imagem)
       }
+
+      function SairPagina() {
+        storage.remove('cliente-logado')
+        nav('/')
+    }
 
 
     return(
@@ -92,6 +100,7 @@ function MeuPerfil() {
                         </div>
 
                         <button onClick={EnviarImagem}>Salvar</button>
+                        <button onClick={SairPagina}>Sair</button>
                     </div>
 
                     <hr></hr>

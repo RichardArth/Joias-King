@@ -7,6 +7,7 @@ import axios from 'axios';
 import LoadingBar from 'react-top-loading-bar'
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import storage from 'local-storage';
+import { useEffect } from 'react';
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
 
       setTimeout(() => {
         navigate('/');
-      }, 3000)
+      }, 2000)
 
     }
 
@@ -50,6 +51,12 @@ function App() {
       }
     }
   }
+
+  useEffect(() => {
+    if(storage('cliente-logado')) {
+      navigate('/')
+    }
+  }, [])
 
   return (
     <div className="App">

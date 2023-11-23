@@ -198,10 +198,29 @@
             margin-bottom: 15px;
         }
 
+        h2 {
+            font:38px 'Alice';
+            color: #DE0D0F;
+            margin-bottom: 10px;
+        }
+
+        .container {
+           display: flex;
+           flex-direction: column;
+           justify-content: center;
+           align-items: center;
+
+           hr {
+            width: 95%;
+            margin: 5px;
+            box-shadow: 0px 2px 10px 3px #d0cece;
+           }
+        }
+
         .s3-central-avaliacoes {
 
             .carrossel {
-                width: 99vw;
+                width: 100vw;
             }
 
             .s3ca-titulo {
@@ -210,16 +229,12 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                  
-                a:-webkit-any-link {
-                    color:rgb(222, 15, 15);
-                    cursor: pointer;
-                    text-decoration:none;
-                }
+                
 
                 hr {
-                    width: 37%;
+                    width: 95%;
                     margin: 5px;
+                    box-shadow: 0px 2px 10px 3px #d0cece;
                 }
 
                 h3 {

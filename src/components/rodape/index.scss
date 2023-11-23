@@ -6,6 +6,7 @@
     background-color: #000;
     height: 35vh;
     width: 100%;
+    min-width: 100%;
     margin-top: 30px;
 
 
@@ -37,12 +38,13 @@
             
             h2 {
                 color:#fff;
-                font: 25px 'Allerta';
+                font: 20px 'Allerta';
+                position: relative;
             }
 
             h5 {
                 color:#fff;
-                font:15px 'Allerta';
+                font:12px 'Allerta';
             }
 
             .cntt-telefone {
@@ -79,6 +81,7 @@
 
             img {
                 width: 11%;
+                max-width: 100%;
             }
 
             #tiktok {
@@ -91,23 +94,26 @@
     .servicos {
         display: flex;
         flex-direction: column;
-        width: 26%;
-        margin-top: -7px;
-        
+        justify-content: center;
+        align-items: center;
+        width: 28%;        
 
         h2 {
             color:#fff;
             text-align: center;
-            font:25px 'Allerta';
+            font:22px 'Allerta';
+            position: relative;
         }
 
         nav {
             margin-top: 10px;
+            width: 100%;
 
             h5 {
                 color:#fff;
-                font:14px 'Allerta';
+                font:13px 'Allerta';
                 margin: 5px;
+                text-align: left;
             }
         }
     }
@@ -115,20 +121,27 @@
     .minha-conta {
         display: flex;
         flex-direction: column;
-        margin-top: 35px;
-        width: 22%;
-        height: 30vh;
+        justify-content: center;
+        align-items: center;
+        width: 28%;
+        height: 79%;
+        gap:15px;
 
         h2 {
             color:#Fff;
             text-align: center;
-            font:25px 'Allerta';
+            font:22px 'Allerta';
+            position: relative;
         }
         
         nav {
             display: flex;
             flex-direction: column;
-            margin-top: 20px;
+            width: 100%;
+            height: 100%;
+            text-align: left;
+            font:13px 'Allerta';
+            gap:5px;
         }
     }
 
@@ -137,16 +150,10 @@
         cursor: pointer;
         text-decoration:none;
     }
-}
 
-@media (min-width: 768px) {
-    /* Estilos específicos para telas maiores que 768 pixels de largura */
-    .rodape {
-        flex-direction: row; /* Alterado para linha em telas maiores */
-        height: 35vh;
-        padding: 0; /* Removido espaçamento interno */
-        hr {
-            display: block; /* Exibir a linha horizontal em telas maiores */
+    @media(max-width: 1170px){
+        .atendimento {
+
         }
-    }
+}
 }

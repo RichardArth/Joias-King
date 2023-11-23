@@ -12,13 +12,7 @@ function Cabecalho() {
   const[filtro, setFiltro] = useState('')
 
   const nav = useNavigate();
-  const usuario = storage('cliente-logado');
-
-
-  function SairPagina() {
-    storage.remove('cliente-logado')
-    nav('/login')
-  }
+  const usuario = storage('cliente-logado')
 
   async function ConsultarProduto(filtro) {
         
@@ -42,9 +36,7 @@ function Cabecalho() {
 
       <div className='cabecalho-direita'>
         <img className='img-perfil' src='./assets/images/usuario.png'></img>
-        {usuario.id === 0 ? <Link to='/cadastro'>Cadastro</Link> : <Link to='/meu-perfil'>Meu Perfil</Link>}
-
-        <img onClick={SairPagina} src='./assets/images/sair-pagina.png'></img>
+        {!usuario ? <Link to='/login'>Login</Link> : <Link to='/meu-perfil'>Meu Perfil</Link>}
 
       <Link to='/carrinho'><img src='./assets/images/carrinho.png'></img></Link>
       </div>     

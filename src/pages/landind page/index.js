@@ -2,12 +2,15 @@ import './index.scss';
 import Cabecalho from '../../components/cabecalho';
 import Rodape from '../../components/rodape';
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import storage from 'local-storage';
   
 
 function LandingPage() {
-    const[slidePerview] = useState(2)
+    const[slidePerview] = useState(2);
+    const nav = useNavigate();
     
     const reviews = [
         {
@@ -43,6 +46,11 @@ function LandingPage() {
         
     ]
 
+    useEffect(() => {
+        if(!storage('adm-login')) {
+            nav('/adm-login')
+        }
+    }, [])
     
 
     return(
@@ -169,18 +177,14 @@ function LandingPage() {
             </div>
 
             <div className='ph-secao-03'>
-                <h3>E quem comprou o que achou?</h3>
+                <h2>E quem comprou o que achou?</h2>
 
                 <div className='s3-central-avaliacoes'>
                     <div className='s3ca-titulo'>
                         <hr></hr>
-                        <Link to='/central-avaliaçoes'><h3 style={{color: '#DE0F0F'}}><b>Central de Avaliações</b></h3></Link>
-                        <hr></hr>
                     </div>
 
                     <div className='container'>
-                        <div className='ligth-container'>
-                            <div className='ligth'>
                             <Swiper
                                 className='carrossel' 
                                 spaceBetween={10}
@@ -206,8 +210,7 @@ function LandingPage() {
                                     </SwiperSlide>
                                 ))}
                             </Swiper>
-                            </div>
-                        </div>
+                            <hr></hr>
                     </div>   
                 </div>
             </div>
