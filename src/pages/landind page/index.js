@@ -47,8 +47,8 @@ function LandingPage() {
     ]
 
     useEffect(() => {
-        if(!storage('adm-login')) {
-            nav('/adm-login')
+        if(!storage('cliente-logado')) {
+            nav('/')
         }
     }, [])
     
