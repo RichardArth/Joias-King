@@ -79,3 +79,9 @@ export async function ConsultarProduto(nome) {
   const r = await api.get(`/produto/busca?nome=${nome}`)
   return r.data
 }
+
+
+export async function buscarProdutoPorId(id) {
+  const r = await api.get('/api/produto/' + id);
+  return r.data
+}

@@ -1,12 +1,32 @@
 import './index.scss';
 import Cabecalho from '../../components/cabecalho';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Rodape from '../../components/rodape';
+import Storage from 'local-storage';
 
 
+    const { id } = useParams;
 
 
 function DescricaoProduto() {
+
+    function adicionarCarrinho() {
+        let carrinho = [];
+        if(Storage('carrinho'))  {
+            carrinho = Storage('carrinho');
+        }      
+
+        if(!carrinho.find(item => item.id === id)) {
+            carrinho.push({
+                id: id,
+                qtd: 1
+            })
+
+            Storage('carrinho', carrinho);
+        }
+    }
+
+
     return(
         <div className='pagina-descricao-produto'>
             <Cabecalho />
@@ -43,7 +63,7 @@ function DescricaoProduto() {
                         </div>
 
                         <button className='comprar'>Finalizar Compra</button>
-                        <button className='adicionar-carrinho'><img src='./assets/images/adicionar-carrinho.png'></img><h5>Adicionar ao Carrinho</h5></button>
+                        <button onClick={adicionarCarrinho} className='adicionar-carrinho'><img src='./assets/images/adicionar-carrinho.png'></img><h5>Adicionar ao Carrinho</h5></button>
                     </div>
                 </main>
 
