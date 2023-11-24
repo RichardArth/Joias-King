@@ -8,7 +8,7 @@ import { BuscarImagem } from '../../api/produto';
 
 function Aliancas() {
 
-    const[aliancas, setAliancas] = useState('');
+    const[aliancas, setAliancas] = useState([]);
     const[imagem, setImagem] = useState('');
 
     async function ListarAliancas() {
