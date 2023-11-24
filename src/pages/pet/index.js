@@ -32,8 +32,9 @@ function Pets(){
       }
 
     return(
-        <div className='pagina-alianca'>
+        <div className='pagina-pets'>
             <Cabecalho />
+            <hr></hr>
 
             <div className='produtos-pets'>
                 {pets.map(e =>

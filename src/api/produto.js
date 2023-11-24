@@ -28,6 +28,11 @@ export async function CadastrarProduto(nome, preco, tipo, detalhes, estoque, tam
     return r.data
   }
 
+  export async function ConsultarProduto(nome) {
+    const r = await api.get(`/produto/busca?nome=${nome}`)
+    return r.data
+  }
+
 
 export async function EnviarImagem(id, imagem) {
     const formData = new FormData();
@@ -72,10 +77,4 @@ export async function BuscarID(id) {
 
 export function BuscarImagem(imagem) {
   return `${api.getUri()}/${imagem}`
-}
-
-
-export async function ConsultarProduto(nome) {
-  const r = await api.get(`/produto/busca?nome=${nome}`)
-  return r.data
 }

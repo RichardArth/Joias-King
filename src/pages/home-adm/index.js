@@ -25,7 +25,7 @@ function LandingAdm() {
 
     async function Filtrar() {
         const r = await ConsultarProduto(filtro)
-        setFiltro(r)
+        setProdutos(r)
     }
 
     

@@ -1,12 +1,29 @@
 import './index.scss';
 import Cabecalho from '../../components/cabecalho';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import Rodape from '../../components/rodape';
+import { BuscarID } from '../../api/produto';
+import { useState } from 'react';
+import { useEffect } from 'react';
+import CompraProduto from '../../components/compraproduto';
 
 
 
 
 function DescricaoProduto() {
+
+    const { IdParam } = useParams();
+    const[produto, setProduto] = useState({})
+
+    useEffect(() => {
+        CarregarProduto()
+    }, [])
+
+    async function CarregarProduto() {
+        const r = await BuscarID(IdParam);
+        setProduto(r)
+    }
+
     return(
         <div className='pagina-descricao-produto'>
             <Cabecalho />
@@ -22,30 +39,7 @@ function DescricaoProduto() {
                     </div>
                 </div>
 
-                <main>
-                    <div className='dp-esquerda'>
-                        <img src='./assets/images/colarcontrole.png'></img>
-
-                        <div>
-                            <h3>Descrição do Produto:</h3>
-
-                            <li>Metal On-Chain</li>
-                        </div>
-                    </div>
-
-                    <div className='dp-direita'>
-                        <h3>Colar Casal Controle Gradiente</h3>
-
-                        <h2>R$79.90</h2>
-
-                        <div className='quantidade'>
-                            <h4>Quantidade: <input></input></h4>
-                        </div>
-
-                        <button className='comprar'>Finalizar Compra</button>
-                        <button className='adicionar-carrinho'><img src='./assets/images/adicionar-carrinho.png'></img><h5>Adicionar ao Carrinho</h5></button>
-                    </div>
-                </main>
+                <CompraProduto produto={produto}/>
 
                 <Rodape />
         </div>

@@ -99,7 +99,9 @@
 
   .erro {
     text-align: center;
-    font:20px 'Inter';
+    font:15px 'Inter';
+    position: relative;
+    z-index: 3;
   }
 
 }

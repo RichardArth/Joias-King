@@ -2,6 +2,61 @@
     display: flex;
     flex-direction: row;
 
+    .parte-menu-adm {
+        width: 22%;
+        background-color: #1d1d1d !important;
+    
+        header {
+            height: 14%;
+            display: flex;
+            flex-direction: column;
+    
+            div {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap:15px;
+                padding: 20px;
+                color:#e2dede;
+    
+                span {
+                    padding: 10px 15px;
+                    border-radius: 300px;
+                    background-color: rgb(1, 1, 99);
+                    text-align: center;
+                }
+            }
+        }
+    
+        .s1eadm-projetos,
+        .s1eadm-produtos {
+            padding: 20px;
+            color:#e2dede;
+            margin: 10px;
+    
+            li {
+              margin: 10px;
+            }
+        }
+    
+        .sair-pagina {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            border: none;
+            background-color: #1d1d1d;
+            cursor: pointer;
+            font:16px 'Allerta';
+            color:#e2dede;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-top: 50px;
+        }
+    }
+
     
     .parte-principal {
         width: 100%;
@@ -9,5 +64,11 @@
         flex-direction: column;
         align-items: center;
         gap:30px;
+    }
+
+    a:-webkit-any-link {
+        color:#e2dede !important;
+        cursor: pointer;
+        text-decoration:none;
     }
 }
