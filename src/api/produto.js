@@ -77,4 +77,11 @@ export async function BuscarID(id) {
 
 export function BuscarImagem(imagem) {
   return `${api.getUri()}/${imagem}`
+
+}
+
+
+export async function buscarProdutoPorId(id) {
+  const r = await api.get(`/produto/${id}`);
+  return r.data
 }
