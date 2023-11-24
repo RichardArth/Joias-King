@@ -131,7 +131,7 @@ function LandingPage() {
                 <h1><b>NOVIDADES </b>PARA VOCÊ</h1>
 
                 <div className='nv-s2-produtos'>
-                    <div>
+                    <div className='s2-produtos-vagalume'>
                         <img src='./assets/images/nv-vagalume.png'></img>
                         <h5>Colar Vagalume Evangeline Prata</h5>
                         <h5>de R$ 259,00</h5>
@@ -147,7 +147,7 @@ function LandingPage() {
                         <h5>À vista</h5>
                     </div>
 
-                    <div>
+                    <div className='s2-produtos-doisaros'>
                         <img src='./assets/images/nv-anel.png'></img>
                         <h5>Anel dois aros pave Ouro amarelo com Diamantes</h5>
                         <h5>Por R$ 6.760,00  ou</h5>
