@@ -60,7 +60,7 @@ function MeuPerfil() {
       function SairPagina() {
         setTimeout(() => {
             storage.remove('cliente-logado')
-            nav('/');
+            nav('/login');
           }, 2000)
     }
 

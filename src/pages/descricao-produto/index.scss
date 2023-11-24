@@ -1,0 +1,98 @@
+.pagina-descricao-produto {
+    display: flex;
+    flex-direction: column;
+
+    .pdp-categorias {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        hr {
+            height: 3px;
+            width: 95%;
+        }
+
+        div {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+    }
+
+    main {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-top: 50px;
+
+        .dp-esquerda {
+            display: flex;
+            width: 50%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 50%;
+            }
+        }
+
+        .dp-direita {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 50%;
+
+            h3 {
+                font:25px 'Inter';
+                font-weight: 600;
+            }
+
+            h2 {
+                text-align: left;
+                margin-top: 30px;
+            }
+
+            .quantidade {
+                margin-top: 20px;
+                font:18px 'Allerta';
+            }
+
+            .comprar {
+                padding: 14px;
+                margin-top: 20px;
+                text-align: center;
+                background-color: #CF6300;
+                border: none;
+                border-radius: 20px;
+                width: 30%;
+                color:#fff;
+                font:19px 'Allerta';
+                box-shadow: 5px 5px 8px 2px rgba(0, 0, 0, 0.30);
+                margin-bottom: 20px;
+            }
+
+            .adicionar-carrinho {
+                background-color: #fff;
+                border: none;
+                width: 20%;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+
+                h5 {
+                    font:12px 'Allerta';
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

@@ -35,12 +35,14 @@ import Trocas from './pages/trocas-devoluçoes';
 import Grafico from './pages/graficos';
 import MeuPerfil from './pages/meu-perfil';
 import DetalhesProduto from './pages/detalhes-produto';
+import DescricaoProduto from './pages/descricao-produto';
 
 import { register } from 'swiper/element/bundle'
 import 'swiper/scss';
 import 'swiper/scss/navigation';
 import 'swiper/scss/pagination';
 import 'swiper/scss/scrollbar';
+
 
 register();
 
@@ -74,6 +76,7 @@ root.render(
        <Route path='/trocas-devoluçao' element={<Trocas />} />
        <Route path='/graficos' element={<Grafico />} />
        <Route path='/meu-perfil' element={<MeuPerfil />} />
+       <Route path='/descricao-produto' element={<DescricaoProduto />} />
        
        <Route path='/detalhesproduto/:idParam' element={<DetalhesProduto />} />
        <Route path='/alterar/:idParam' element={<CadastroProduto />} />

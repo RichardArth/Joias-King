@@ -13,21 +13,22 @@
     
     .cabecalho-esquerda{
         display: flex;
+        justify-content: space-between;
         align-items: center;
         cursor: pointer;
         margin-left: 40px;
+        border-bottom: 1px solid black;
     } 
     
     .cabecalho-esquerda img{
-        width: auto;
-        height: 30px;
+        width: 16%;
        
     }
     
     .cabecalho-esquerda input{
         outline: none;
+        width: 85%;
         border: none;
-        border-bottom: 1px solid #000000;
         cursor: pointer;
     }
     
