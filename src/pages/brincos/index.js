@@ -38,7 +38,7 @@ function Brincos() {
             {brincos.map(e =>
                 <div className='produto-ficha-s1'>
                     <div className='produto-s2'>
-                        <img src={mostrarimg()}></img>
+                        <img src={mostrarimg()} alt={e.imagem}></img>
                         <h5>{e.nome}</h5>
                         <h4 style={{color: '#B88B1B'}}>R${e.preco}</h4>
                         <h6>Estoque:{e.estoque}</h6>

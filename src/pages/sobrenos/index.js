@@ -1,6 +1,7 @@
 import './index.scss';
 import Cabecalho from '../../components/cabecalho';
-import Rodape from '../../components/rodape'
+import Rodape from '../../components/rodape';
+import { Link } from 'react-router-dom';
 
 function Index() {
     return(
@@ -28,30 +29,33 @@ function Index() {
 
 
                         <div className='meio-02'>
-                            <div className='baixo-01'> 
-                            <p>Desde a nossa fundação, a busca pela excelência
-                                    tem sido a base de tudo o que fazemos. Cada joia
-                                    em nosso catálogo é fruto de um processo
-                                    meticuloso, no qual combinamos a maestria da
-                                    ourivesaria tradicional com a criatividade e a
-                                    inovação contemporânea. Buscamos apenas
-                                    materiais preciosos e pedras preciosas
-                                    selecionadas, garantindo assim a herança e o
-                                    brilho de cada peça.</p>
-                            </div>
-                            <div className='baixo-02'>
+                                <div className='baixo-01'> 
+                                <p>Desde a nossa fundação, a busca pela excelência
+                                        tem sido a base de tudo o que fazemos. Cada joia
+                                        em nosso catálogo é fruto de um processo
+                                        meticuloso, no qual combinamos a maestria da
+                                        ourivesaria tradicional com a criatividade e a
+                                        inovação contemporânea. Buscamos apenas
+                                        materiais preciosos e pedras preciosas
+                                        selecionadas, garantindo assim a herança e o
+                                        brilho de cada peça.</p>
+                                </div>
+                                <div className='baixo-02'>
                                 
 
                                     <img src='./assets/images/image 41.png'/>    
-                            </div>
-                            </div>
+                                </div>
+                        </div>
                             <hr></hr>
 
-                            <button>Cadastre-se Agora!</button>
+                            
+                            <div className='cadastrar'>
+                                <Link to='/cadastro'>Cadastre-se Agora!</Link>
+                            </div>
                         
-                        </div>
+                    </div>
                         
-                        <Rodape />
+                    <Rodape />
                   
                     
                 
