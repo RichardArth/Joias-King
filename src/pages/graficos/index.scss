@@ -38,19 +38,18 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-        }   
+        }
     }
 }
 
 
-.botao-planilha{
- 
-
-    height: 20px;
-    width: 35px;
-    font: 15px 'Allerta';
-    color: #ffffff;
-    border-radius: 20px;
-    background-color: #B88B1B;
-
+.simulacao-compra{
+    background-color: #CF6300;
+    border: none;
+    color: #fff;
+    height: 50px;
+    width: 200px;
+    margin-top:60px;
+    border-radius: 40px;
+    cursor: pointer;
 }
